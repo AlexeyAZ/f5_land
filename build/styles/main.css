@@ -3203,6 +3203,9 @@ a {
   @media only screen and (max-width: 1024px) {
     .sec1 {
       padding-bottom: 40px; } }
+  @media only screen and (max-width: 768px) {
+    .sec1 {
+      padding-bottom: 0; } }
   .sec1__container {
     z-index: 1; }
     @media only screen and (max-width: 1024px) {
@@ -3310,6 +3313,54 @@ a {
         bottom: 10%;
         max-height: none;
         max-width: 90%; } }
+
+.sec2 {
+  background-color: #f5f5f5;
+  background-image: url("../img/sec2-brilliant.png");
+  background-size: auto;
+  background-position: left 220px;
+  padding: 100px 0 120px; }
+  .sec2__list {
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden; }
+  .sec2__list-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .sec2__list-col {
+    width: 50%; }
+    .sec2__list-col_text {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: column;
+              flex-flow: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+    .sec2__list-col_img {
+      min-height: 400px; }
+  .sec2__list-icon {
+    background-color: #4e3187;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto 20px;
+    height: 96px;
+    width: 96px; }
+  .sec2__list-title {
+    font-weight: 500;
+    margin-bottom: 20px; }
 
 .icon {
   display: inline-block;

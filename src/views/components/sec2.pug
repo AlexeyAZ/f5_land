@@ -1,2 +1,25 @@
+
+- var sec2List = []
+- sec2List.push({title: "Вы получаете заявку от клиента", text: "К Вам будут обращаться предприниматели Вашего региона за консультацией и помощью по масштабированию бизнеса"})
+
 section.sec.sec2
-    div.container
+    div.container.ta-center
+        h3.bold.
+            Простые действия, <br>которые приведут Вас к прибыли
+        p.italic.l.
+            Посмотрите схему работы филиала «Франчайзинг5»
+        div.sec2__list
+
+            each item in sec2List
+                div.
+                    #{item.title}
+            //div.sec2__list-item
+                div.sec2__list-col.sec2__list-col_text
+                    div.sec2__list-icon
+                        img(src="img/sec2-icon1.png", alt="").sec2__list-icon-img
+                    p.sec2__list-title.
+                        Вы получаете заявку от клиента
+                    p.xs.
+                        К Вам будут обращаться предприниматели Вашего региона за консультацией и помощью по масштабированию бизнеса
+                div.sec2__list-col.sec2__list-col_img
+                    div.sec2__list-img

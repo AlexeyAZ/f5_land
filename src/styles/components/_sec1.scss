@@ -7,6 +7,10 @@
         padding-bottom: 40px;
     }
 
+    @include media(w768) {
+        padding-bottom: 0;
+    }
+
     &__container {
         z-index: 1;
 

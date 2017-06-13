@@ -1,3 +1,50 @@
+$sec2-list-icon-size: 96px;
+$sec2-list-icon-bg: #4e3187;
+
 .sec2 {
-    
+    background-color: $sec2-bg;
+    background-image: url("../img/sec2-brilliant.png");
+    background-size: auto;
+    background-position: left 220px;
+    padding: 100px 0 120px;
+
+    &__list {
+        background-color: white;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    &__list-item {
+        display: flex;
+    }
+
+    &__list-col {
+        width: 50%;
+
+        &_text {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+        }
+
+        &_img {
+            min-height: 400px;
+        }
+    }
+
+    &__list-icon {
+        background-color: $sec2-list-icon-bg;
+        border-radius: 50%;;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        height: $sec2-list-icon-size;
+        width: $sec2-list-icon-size;
+    }
+
+    &__list-title {
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
 }
