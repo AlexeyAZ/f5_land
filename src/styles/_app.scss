@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-size: 20px;
+    font-family: "PFAgoraSansPro", Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+    position: relative;
+    min-width: 320px;
+}

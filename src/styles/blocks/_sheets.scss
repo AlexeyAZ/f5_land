@@ -1,0 +1,44 @@
+$sheets-border-radius: 16px;
+$sheets-offset: 20px;
+$sheets-bg: #f6f6f6;
+
+.sheets {
+    background-color: $sheets-bg;
+    border-radius: $sheets-border-radius;
+    box-shadow: 0 0 40px rgba(0,0,0,0.4);
+    margin-bottom: calc(4 * #{$sheets-offset});
+    padding: 72px;
+    position: relative;
+
+    &:before,
+    &:after {
+        content: "";
+        background-color: $sheets-bg;
+        border-radius: $sheets-border-radius;
+        box-shadow: 0 0 40px rgba(0,0,0,0.4);
+        position: absolute;
+        height: 100%;
+    }
+
+    &:before {
+        left: $sheets-offset;
+        bottom: -$sheets-offset;
+        width: calc(100% - calc(2 * #{$sheets-offset}));
+        z-index: -1;
+    }
+
+    &:after {
+        left: calc(2 * #{$sheets-offset});
+        bottom: calc(-2 * #{$sheets-offset});
+        width: calc(100% - calc(4 * #{$sheets-offset}));
+        z-index: -2;
+    }
+
+    @include media(w1024) {
+        padding: 45px;
+    }
+
+    @include media(w768) {
+        padding: 30px 20px;
+    }
+}
