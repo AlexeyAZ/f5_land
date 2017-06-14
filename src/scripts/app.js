@@ -3,11 +3,89 @@ $(function() {
     var body = $("body");
     var thanksLocation = "thanks.html";
 
-    if ($('input[type="range"]').length) {
-        $('input[type="range"]').rangeslider({
-            polyfill: false,
+    // if ($('input[type="range"]').length) {
+    //     $('input[type="range"]').rangeslider({
+    //         polyfill: false,
+    //     });
+    // };
+
+    createSliders();
+
+    function createSliders() {
+        var sliders = document.querySelectorAll(".sec3__slider");
+        var packageSlider = "packagedSlider";
+        var salesSlider = "salesSlider";
+        var timeSlider = "timeSlider";
+
+        sliders.forEach(function(item, i, sliders) {
+            var sliderOptions = {};
+
+            if (item.id === packageSlider) {
+                
+                sliderOptions = {
+                    start: [0],
+                    range: {
+                        'min': [ 0 ],
+                        'max': [ 5 ]
+                    }
+                }
+                
+            } else if (item.id === salesSlider) {
+
+                sliderOptions = {
+                    start: [0],
+                    range: {
+                        'min': [ 0 ],
+                        'max': [ 5 ]
+                    }
+                }
+            } else if(item.id === timeSlider) {
+
+                sliderOptions = {
+                    start: [1],
+                    range: {
+                        'min': [ 1 ],
+                        'max': [ 12 ]
+                    }
+                }
+            }
+
+            noUiSlider.create(item, {
+                step: 1,
+                connect: [true, false],
+                start: sliderOptions.start,
+                range: sliderOptions.range,
+                pips: {
+                    mode: 'steps',
+                    filter: function() {
+                        return 1
+                    },
+                    density: 100
+                }
+            });
         });
+
+        sliders.forEach(function(item,i,sliders) {
+            item.noUiSlider.on('update', setNumbers);
+        });
+
+        function setNumbers() {
+            var price = document.getElementById("price");
+            var result;
+
+            var pS = document.getElementById(packageSlider);
+            var sS = document.getElementById(salesSlider);
+            var tS = document.getElementById(timeSlider);
+
+            var psValue = +pS.noUiSlider.get();
+            var ssValue = +sS.noUiSlider.get();
+            var tsValue = +tS.noUiSlider.get();
+
+            result = (psValue + ssValue + tsValue) * 5500;
+            price.innerText = String(result).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+        }
     };
+    
 
     webshim.setOptions('forms', {
         lazyCustomMessages: true,

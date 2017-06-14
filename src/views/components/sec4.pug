@@ -1,3 +1,39 @@
+- var sec4List = [];
+- sec4List.push({title:"Техническое оснащение офиса",subtitle:"Вся техническая часть вашего запуска лежит на наших плечах.", text:""});
+- sec4List.push({title:"Подбор персонала",subtitle:"Наш HR-отдел подберет 20 кандидатов на позицию менеджера по продажам.", text:""});
+- sec4List.push({title:"Реклама и маркетинг",subtitle:"Наш отдел маркетинга будет работать над привлечением клиентов в Ваш бизнес.", text:""});
+- sec4List.push({title:"Упаковка франшизы",subtitle:"Всю работу по упаковке франшизы берем на себя.", text:""});
+- sec4List.push({title:"Аналитика",subtitle:"Получайте данные о своем бизнесе в реальном времени.", text:""});
+- sec4List.push({title:"Бухгалтерская и юридическая поддержка",subtitle:"Мы знаем все тонкости в нашем бизнесе и не дадим совершить Вам даже 1 ошибку.", text:""});
+
 section.sec.sec4
     div.container
-            
+        div.sec4__heading.ta-center
+            h2.bold.
+                Простая бизнес-модель
+            p.l.italic.
+                80 % работы мы сделаем за вас
+            p.m.light.mb2.
+                Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу
+        div.sec4__row
+            div.sec4__col
+                div.sec4__list
+                    each item, index in sec4List 
+                        div.sec4__list-item
+                            div.sec4__list-head
+                                div.sec4__list-title-wrap
+                                    p.l.sec4__list-title
+                                        |#{item.title}
+                                        div.sec4__list-arrow
+                                    p.xs.sec4__list-subtitle.
+                                        #{item.subtitle}
+                            div.sec4__list-body
+                                p.xs.
+                                    Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу
+            div.sec4__col
+                div.sec4__door
+                    img(src="img/sec4-door.png", alt="").sec4__doorleft
+                    img(src="img/sec4-doorright.png", alt="").sec4__doorright
+
+                    each item, index in sec4List
+                        img(src="img/sec4-img" + (index + 1) + ".png", alt="").sec4__doorimg

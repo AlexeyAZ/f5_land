@@ -8,27 +8,100 @@ $sec2-list-icon-bg: #4e3187;
     background-position: left 220px;
     padding: 100px 0 120px;
 
+    @include media(w1024) {
+        background-image: none;
+        padding: 60px 0 70px;
+    }
+
+    @include media(w768) {
+        padding: 30px 0 40px;
+    }
+
     &__list {
         background-color: white;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.2);
         border-radius: 16px;
         overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        @include media(w768) {
+            border-radius: 0;
+            margin-left: -$container-side-padding-tablet;
+            margin-right: -$container-side-padding-tablet;
+        }
     }
 
     &__list-item {
         display: flex;
+
+        &:nth-child(even) {
+            
+            .sec2__list-col {
+                
+                &_text {
+                    order: 1;
+
+                    @include media(w1024) {
+                        order: 0;
+                    }
+                }
+
+                &_img {
+                    order: 0;
+
+                    @include media(w1024) {
+                        order: 1;
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+
+            .sec2__list-icon {
+                background-image: url("../img/sec2-icon-gold.png");
+                background-color: transparent;
+            }
+        }
+
+        @include media(w1024) {
+            flex-flow: column;
+        }
     }
 
     &__list-col {
+        min-height: 400px;
         width: 50%;
 
         &_text {
             display: flex;
             flex-flow: column;
             justify-content: center;
+            padding: 0 50px;
+
+            @include media(w768) {
+                padding: 40px 30px 30px;
+            }
         }
 
         &_img {
-            min-height: 400px;
+            overflow: hidden;
+
+            &:hover {
+
+                .sec2__list-img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        @include media(w1024) {
+            width: 100%;
+        }
+
+        @include media(w768) {
+            min-height: auto;
         }
     }
 
@@ -44,7 +117,32 @@ $sec2-list-icon-bg: #4e3187;
     }
 
     &__list-title {
+        font-size: 26px;
         font-weight: 500;
         margin-bottom: 20px;
+    }
+
+    &__list-img {
+        transition: 0.5s ease;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+
+        @include media(w1024) {
+            //display: none;
+            background-image: none;
+            background-position: center top;
+        }
+    }
+
+    &__list-img-tablet {
+        display: none;
+
+        @include media(w1024) {
+            opacity: 0;
+            display: block;
+            width: 100%;
+        }
     }
 }

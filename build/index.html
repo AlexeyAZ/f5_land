@@ -86,28 +86,210 @@
     <section class="sec sec2">
       <div class="container ta-center">
         <h3 class="bold">Простые действия, <br>которые приведут Вас к прибыли</h3>
-        <p class="italic l">Посмотрите схему работы филиала «Франчайзинг5»</p>
+        <p class="italic l mb1">Посмотрите схему работы филиала «Франчайзинг5»</p>
         <div class="sec2__list">
-          <div>Вы получаете заявку от клиента</div>
-          <!--div.sec2__list-item
-          div.sec2__list-col.sec2__list-col_text
-              div.sec2__list-icon
-                  img(src="img/sec2-icon1.png", alt="").sec2__list-icon-img
-              p.sec2__list-title.
-                  Вы получаете заявку от клиента
-              p.xs.
-                  К Вам будут обращаться предприниматели Вашего региона за консультацией и помощью по масштабированию бизнеса
-          div.sec2__list-col.sec2__list-col_img
-              div.sec2__list-img
-          -->
+          <div class="sec2__list-item">
+            <div class="sec2__list-col sec2__list-col_text">
+              <div class="sec2__list-icon"><img class="sec2__list-icon-img" src="img/sec2-icon1.png" alt=""></div>
+              <p class="sec2__list-title">Вы получаете заявку от клиента</p>
+              <p class="xs">К Вам будут обращаться предприниматели Вашего региона за консультацией и помощью по масштабированию бизнеса</p>
+            </div>
+            <div class="sec2__list-col sec2__list-col_img">
+              <div class="sec2__list-img" style="background-image:url('img/sec2-img1.jpg');"><img class="sec2__list-img-tablet" src="img/sec2-img1.jpg" alt=""></div>
+            </div>
+          </div>
+          <div class="sec2__list-item">
+            <div class="sec2__list-col sec2__list-col_text">
+              <div class="sec2__list-icon"><img class="sec2__list-icon-img" src="img/sec2-icon2.png" alt=""></div>
+              <p class="sec2__list-title">Заключаете договор и получаете оплату</p>
+              <p class="xs">Региональный директор поможет Вам покорить даже самого сложного клиента</p>
+            </div>
+            <div class="sec2__list-col sec2__list-col_img">
+              <div class="sec2__list-img" style="background-image:url('img/sec2-img2.jpg');"><img class="sec2__list-img-tablet" src="img/sec2-img2.jpg" alt=""></div>
+            </div>
+          </div>
+          <div class="sec2__list-item">
+            <div class="sec2__list-col sec2__list-col_text">
+              <div class="sec2__list-icon"><img class="sec2__list-icon-img" src="img/sec2-icon3.png" alt=""></div>
+              <p class="sec2__list-title">Мы берем всю работу по упаковке франшизы на себя</p>
+              <p class="xs">Средний чек с каждой сделки по упаковке франшиз 710 000. Половина этих денег — ваша прибыль</p>
+            </div>
+            <div class="sec2__list-col sec2__list-col_img">
+              <div class="sec2__list-img" style="background-image:url('img/sec2-img3.jpg');"><img class="sec2__list-img-tablet" src="img/sec2-img3.jpg" alt=""></div>
+            </div>
+          </div>
+          <div class="sec2__list-item">
+            <div class="sec2__list-col sec2__list-col_text">
+              <div class="sec2__list-icon"><img class="sec2__list-icon-img" src="img/sec2-icon4.png" alt=""></div>
+              <p class="sec2__list-title">Вы продаете упакованную франшизу</p>
+              <p class="xs">И получаете дополнительный доход от 80 000 с одной продажи</p>
+            </div>
+            <div class="sec2__list-col sec2__list-col_img">
+              <div class="sec2__list-img" style="background-image:url('img/sec2-img4.jpg');"><img class="sec2__list-img-tablet" src="img/sec2-img4.jpg" alt=""></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
     <section class="sec sec3">
-      <div class="container"></div>
+      <div class="container color-white">
+        <h2 class="bold ta-center">Рассчитайте свой доход</h2>
+        <p class="italic l mb1 ta-center">Ваш бизнес будет приносить прибыль даже при одной сделке в месяц</p>
+        <div class="sec3__calc-block">
+          <div class="sec3__calc-col sec3__calc-col_sliders">
+            <div class="sec3__calc-row">
+              <p class="m sec3__calc-title">Количество упакованных франшиз за месяц </p>
+              <div class="sec3__slider" id="packagedSlider"></div>
+            </div>
+            <div class="sec3__calc-row">
+              <p class="m sec3__calc-title">Количество проданных франшиз за месяц </p>
+              <div class="sec3__slider" id="salesSlider"></div>
+            </div>
+            <div class="sec3__calc-row">
+              <p class="m sec3__calc-title">Период работы вашего филиала (мес.)</p>
+              <div class="sec3__slider" id="timeSlider"></div>
+            </div>
+          </div>
+          <div class="sec3__calc-col sec3__calc-col_values">
+            <div class="sheets sec3__values color-black">
+              <div class="sec3__values-row">
+                <div class="sec3__values-name">Выручка</div>
+                <div class="sec3__values-number" id="price">680 000</div>
+              </div>
+              <div class="sec3__values-row">
+                <div class="sec3__values-name">Средний чек от упаковки франшиз</div>
+                <div class="sec3__values-number">680 000</div>
+              </div>
+              <div class="sec3__values-row">
+                <div class="sec3__values-name">Средний чек от продажи франшиз</div>
+                <div class="sec3__values-number">680 000</div>
+              </div>
+              <div class="sec3__values-row">
+                <div class="sec3__values-name">Организационные затраты</div>
+                <div class="sec3__values-number">680 000</div>
+              </div>
+              <div class="sec3__values-row">
+                <div class="sec3__values-name">Фонд оплаты труда</div>
+                <div class="sec3__values-number">680 000</div>
+              </div>
+              <div class="sec3__values-row">
+                <div class="sec3__values-name">Налог (УСН 6%)</div>
+                <div class="sec3__values-number">680 000</div>
+              </div>
+              <div class="sec3__note">
+                <div class="sec3__note-text">Вы заработаете</div>
+              </div>
+              <div class="sec3__summ">340 000</div>
+              <div class="sec3__summ-note">за 1 месяц</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sec3__bottom">
+        <div class="container">
+          <div class="sec3__bottom-row">
+            <p class="l italic color-white sec3__bottom-title mb0">Узнайте, как заработать <span>340 000</span> за 1 месяц в PDF-презентации франшизы</p>
+            <button class="btn-round btn-round_download js-small-btn sec3__btn">Скачать презентацию <span>франшизы</span></button>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="sec sec4">
-      <div class="container"></div>
+      <div class="container">
+        <div class="sec4__heading ta-center">
+          <h2 class="bold">Простая бизнес-модель</h2>
+          <p class="l italic">80% работы мы сделаем за вас</p>
+          <p class="m light mb2">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+        </div>
+        <div class="sec4__row">
+          <div class="sec4__col">
+            <div class="sec4__list">
+              <div class="sec4__list-item">
+                <div class="sec4__list-head">
+                  <div class="sec4__list-title-wrap">
+                    <p class="l sec4__list-title">Техническое оснащение офиса
+                      <div class="sec4__list-arrow"></div>
+                    </p>
+                    <p class="xs sec4__list-subtitle">Вся техническая часть вашего запуска лежит на наших плечах.</p>
+                  </div>
+                </div>
+                <div class="sec4__list-body">
+                  <p class="xs">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+                </div>
+              </div>
+              <div class="sec4__list-item">
+                <div class="sec4__list-head">
+                  <div class="sec4__list-title-wrap">
+                    <p class="l sec4__list-title">Подбор персонала
+                      <div class="sec4__list-arrow"></div>
+                    </p>
+                    <p class="xs sec4__list-subtitle">Наш HR-отдел подберет 20 кандидатов на позицию менеджера по продажам.</p>
+                  </div>
+                </div>
+                <div class="sec4__list-body">
+                  <p class="xs">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+                </div>
+              </div>
+              <div class="sec4__list-item">
+                <div class="sec4__list-head">
+                  <div class="sec4__list-title-wrap">
+                    <p class="l sec4__list-title">Реклама и маркетинг
+                      <div class="sec4__list-arrow"></div>
+                    </p>
+                    <p class="xs sec4__list-subtitle">Наш отдел маркетинга будет работать над привлечением клиентов в Ваш бизнес.</p>
+                  </div>
+                </div>
+                <div class="sec4__list-body">
+                  <p class="xs">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+                </div>
+              </div>
+              <div class="sec4__list-item">
+                <div class="sec4__list-head">
+                  <div class="sec4__list-title-wrap">
+                    <p class="l sec4__list-title">Упаковка франшизы
+                      <div class="sec4__list-arrow"></div>
+                    </p>
+                    <p class="xs sec4__list-subtitle">Всю работу по упаковке франшизы берем на себя.</p>
+                  </div>
+                </div>
+                <div class="sec4__list-body">
+                  <p class="xs">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+                </div>
+              </div>
+              <div class="sec4__list-item">
+                <div class="sec4__list-head">
+                  <div class="sec4__list-title-wrap">
+                    <p class="l sec4__list-title">Аналитика
+                      <div class="sec4__list-arrow"></div>
+                    </p>
+                    <p class="xs sec4__list-subtitle">Получайте данные о своем бизнесе в реальном времени.</p>
+                  </div>
+                </div>
+                <div class="sec4__list-body">
+                  <p class="xs">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+                </div>
+              </div>
+              <div class="sec4__list-item">
+                <div class="sec4__list-head">
+                  <div class="sec4__list-title-wrap">
+                    <p class="l sec4__list-title">Бухгалтерская и юридическая поддержка
+                      <div class="sec4__list-arrow"></div>
+                    </p>
+                    <p class="xs sec4__list-subtitle">Мы знаем все тонкости в нашем бизнесе и не дадим совершить Вам даже 1 ошибку.</p>
+                  </div>
+                </div>
+                <div class="sec4__list-body">
+                  <p class="xs">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sec4__col">
+            <div class="sec4__door"><img class="sec4__doorleft" src="img/sec4-door.png" alt=""><img class="sec4__doorright" src="img/sec4-doorright.png" alt=""><img class="sec4__doorimg" src="img/sec4-img1.png" alt=""><img class="sec4__doorimg" src="img/sec4-img2.png" alt=""><img class="sec4__doorimg" src="img/sec4-img3.png" alt=""><img class="sec4__doorimg" src="img/sec4-img4.png" alt=""><img class="sec4__doorimg" src="img/sec4-img5.png" alt=""><img class="sec4__doorimg" src="img/sec4-img6.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="sec sec5">
       <div class="container"></div>

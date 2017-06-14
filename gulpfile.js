@@ -13,9 +13,11 @@ var plugins = {
         'bower_components/mobile-detect/mobile-detect.min.js',
         'bower_components/rangeslider.js/dist/rangeslider.min.js',
         'bower_components/webshim/js-webshim/minified/polyfiller.js',
+        'bower_components/nouislider/distribute/nouislider.min.js',
     ],
     css: [
         'bower_components/reset-css/reset.css','bower_components/rangeslider.js/dist/rangeslider.css',
+        'bower_components/nouislider/distribute/nouislider.min.css',
     ]
 }
 
