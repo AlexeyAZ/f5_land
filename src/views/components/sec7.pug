@@ -1,3 +1,14 @@
 section.sec.sec7
-    div.container
-        include bottom-form
+    div.container.ta-center
+        h3.color-white.ta-center.bold.mb1.
+            Узнайте точную стоимость франшизы для своего города
+        form.sec7__form
+            label.sec7__form-label
+                input(name="city" placeholder="Ваш город" required).input
+            label.sec7__form-label
+                input(name="phone" placeholder="Телефон" type="tel" required).input.sec7__form-input.sec7__form-input_phone
+            label.sec7__form-label
+                input(name="email" type="email" placeholder="E-mail" required).input
+            label.sec7__form-label
+                button.btn-round.sec7__form-btn.
+                    Узнать стоимость

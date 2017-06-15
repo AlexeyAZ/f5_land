@@ -1,2 +1,28 @@
+- var sec6Names = [];
+- sec6Names.push({name:"Заключение договора франчайзинга", values: [1]});
+- sec6Names.push({name:"Обучение и аттестация", values: [1, 5]});
+- sec6Names.push({name:"Подача документов на регистрацию юридического лица", values: [1, 11]});
+- sec6Names.push({name:"Поиск, согласование и подготовка помещения", values: [3, 14]});
+- sec6Names.push({name:"Установка телефонии и интернета", values: [6, 3]});
+- sec6Names.push({name:"Настройка и обучение работы в системе", values: [11, 10]});
+- sec6Names.push({name:"Запуск маркетинговой кампании", values: [10, 15]});
+- sec6Names.push({name:"Настройка и обучение работы в CRM-системе", values: [11, 1]});
+- sec6Names.push({name:"Запуск интернет продвижения", values: [10, 14]});
+- sec6Names.push({name:"Подпись части актов, договоренности", values: [20, 1]});
+- sec6Names.push({name:"Торжественное открытие. Начало продаж", values: [21, 1]});
+
 section.sec.sec6
     div.container
+        h3.ta-center.bold.
+            Откройте свой филиал «Франчайзинг5» за 21 день
+        div.sec6__block
+            each item, index in sec6Names
+                div.sec6__block-row
+                    div.sec6__block-col.sec6__block-col_left
+                        p.sec6__block-name.mb0.
+                            #{item.name}
+                    div.sec6__block-col.sec6__block-col_right
+                        div.sec6__block-lines
+                            each value in item.values
+                                div.sec6__block-line.
+                                    #{value}

@@ -10,15 +10,15 @@ $(function () {
     // };
 
     createSliders();
-
     function createSliders() {
         var sliders = document.querySelectorAll(".sec3__slider");
         var packageSlider = "packagedSlider";
         var salesSlider = "salesSlider";
         var timeSlider = "timeSlider";
 
-        sliders.forEach(function (item, i, sliders) {
+        for (var i = 0; i < sliders.length; i++) {
             var sliderOptions = {};
+            var item = sliders[i];
 
             if (item.id === packageSlider) {
 
@@ -62,11 +62,11 @@ $(function () {
                     density: 100
                 }
             });
-        });
+        };
 
-        sliders.forEach(function (item, i, sliders) {
-            item.noUiSlider.on('update', setNumbers);
-        });
+        for (var i = 0; i < sliders.length; i++) {
+            sliders[i].noUiSlider.on('update', setNumbers);
+        }
 
         function setNumbers() {
             var price = document.getElementById("price");
@@ -84,6 +84,82 @@ $(function () {
             price.innerText = String(result).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
         }
     };
+
+    function sec4ListItemsAnimate() {
+        var items = document.querySelectorAll(".sec4__list-item");
+        var images = document.querySelectorAll(".sec4__doorimg");
+        var itemsArr = [];
+        var imgsArr = [];
+
+        for (var i = 0; i < items.length; i++) {
+            itemsArr.push(items[i]);
+        }
+
+        for (var j = 0; j < images.length; j++) {
+            imgsArr.push(images[j]);
+        }
+
+        function setActiveItemSec4(item, img) {
+            item = item || items[0];
+            img = img || images[0];
+
+            item.classList.add("sec4__list-item_active");
+            img.classList.add("sec4__doorimg_active");
+        };
+        setActiveItemSec4();
+
+        function actionsItemSec4() {
+
+            for (var i = 0; i < items.length; i++) {
+                items[i].addEventListener("mouseenter", sec4MouseEnter);
+                items[i].addEventListener("click", sec4MouseClick);
+            }
+        }
+        actionsItemSec4();
+
+        function sec4MouseEnter() {
+            var itemIndex = itemsArr.indexOf(this);
+
+            removeClass(itemsArr, "sec4__list-item_active");
+            removeClass(imgsArr, "sec4__doorimg_active");
+
+            setActiveItemSec4(this, images[itemIndex]);
+        }
+
+        function sec4MouseClick() {
+            var itemIndex = itemsArr.indexOf(this);
+            var itemBody = this.querySelector(".sec4__list-body");
+            var itemBodyText = this.querySelector(".sec4__list-body-text");
+            var openCls = "sec4__list-item_open";
+            var itemBodyTextHeight = itemBodyText.clientHeight;
+
+            if (this.classList.contains(openCls)) {
+                this.classList.remove(openCls);
+                itemBody.style.height = 0;
+            } else {
+                itemsArr.forEach(function (item, i) {
+
+                    if (item.classList.contains(openCls)) {
+                        item.classList.remove(openCls);
+                        item.querySelector(".sec4__list-body").style.height = 0;
+                    }
+                });
+                itemBody.style.height = itemBodyTextHeight + "px";
+                this.classList.add(openCls);
+            }
+        };
+
+        function removeClass(arr, cls) {
+
+            arr.forEach(function (item, i, ar) {
+
+                if (item.classList.contains(cls)) {
+                    item.classList.remove(cls);
+                }
+            });
+        }
+    };
+    sec4ListItemsAnimate();
 
     webshim.setOptions('forms', {
         lazyCustomMessages: true,
@@ -111,7 +187,7 @@ $(function () {
     $("input[name=phone]").inputmask({
         "mask": "+9(999)999-9999",
         greedy: false,
-        clearIncomplete: true
+        clearIncompvare: true
     });
 
     body.on("click", ".js-small-btn", function (e) {
@@ -148,7 +224,7 @@ $(function () {
             }
         };
     } else {
-        $("#smallForm, #bottomForm").submit(function (e) {
+        $("#smallForm, #bottomForm, #sec5Form").submit(function (e) {
             e.preventDefault();
             var self = $(this);
 

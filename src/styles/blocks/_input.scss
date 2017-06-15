@@ -2,7 +2,7 @@
     @include placeholder {
         color: white;
     }
-    background-color: rgba(0,0,0,0.6);
+    background-color: transparent;
     background-repeat: no-repeat;
     border-radius: calc(#{$btn-height-pc} / 2);
     border: 2px solid white;
@@ -10,7 +10,7 @@
     display: inline-block;
     color: white;
     font-family: "SegoeUI", sans-serif;
-    font-weight: 300;
+    font-style: italic;
     font-size: $input-font-size-pc;
     padding: 0 35px;
     height: $btn-height-pc;
@@ -40,6 +40,26 @@
         background-image: url("../img/input-phone.png");
         background-position: 20px center;
         padding-left: 55px;
+    }
+
+    &_small {
+        @include placeholder {
+            color: #adadad;
+        }
+        background-color: transparent;
+        border: 2px solid #adadad;
+        color: black;
+        font-size: 20px;
+        padding-left: 30px;
+        height: 60px;
+
+        @include media (w1024) {
+            height: 60px;
+        }
+
+        @include media (w768) {
+            height: 60px;
+        }
     }
 }
 

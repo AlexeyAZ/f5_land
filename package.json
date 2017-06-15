@@ -9,20 +9,26 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "*",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "*",
+    "babel-preset-es2015-ie": "^6.7.0",
     "gulp": "*",
     "gulp-autoprefixer": "*",
     "gulp-babel": "*",
     "gulp-concat": "*",
     "gulp-connect": "*",
     "gulp-pug": "*",
+    "gulp-rigger": "*",
     "gulp-sass": "*",
     "gulp-sourcemaps": "*",
-    "gulp-watch": "*",
-    "gulp-rigger": "*"
+    "gulp-watch": "*"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-runtime": "^6.23.0",
     "browser-sync": "^2.18.8",
     "gulp-cheerio": "^0.6.2",
     "gulp-replace": "^0.5.4",
