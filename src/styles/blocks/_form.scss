@@ -1,7 +1,7 @@
 $form-input-border: #8f8f8f;
 $form-input-bg: #e1e1e1;
 
-$form-input-height: 62px;
+$form-input-height: 42px;
 $form-input-padding: 25px;
 
 .form-wrap {
@@ -37,18 +37,29 @@ $form-input-padding: 25px;
 }
 .form-container {
     background-color: white;
+    border-radius: 20px;
     display: inline-block;
     text-align: left;
     opacity: 0;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    padding: 50px 50px 60px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding: 15px 30px;
     position: relative;
-    width: 430px;
+    width: 400px;
     z-index: 100;
 
+    &_gift {
+        padding-bottom: 50px;
+        width: 500px;
+
+        @include media(w768) {
+            padding: 20px 10px 30px;
+        }
+    }
+
     @include media(w768) {
-        padding: 20px 20px 30px;
+        // margin-top: 30px;
+        padding: 15px 20px;
         width: 300px;
     }
 }
@@ -85,26 +96,39 @@ $form-input-padding: 25px;
     }
 
     &__heading {
-        font-size: 42px;
+        text-align: center;
+        font-size: 26px;
         font-weight: bold;
         margin-bottom: 20px;
 
         @media screen and (max-width:768px) {
-            font-size: 32px;
+            //font-size: 28px;
         }
     }
 
     &__title {
-        font-size: 50px;
+        font-size: 40px;
+        margin-bottom: 5px;
+
+        @include media(w768) {
+            font-size: 30px;
+        }
     }
 
     &__descr {
-        font-size: 20px;
-        margin-bottom: 50px;
+        font-size: 15px;
+        margin-bottom: 10px;
+
+        @media screen and (max-width:768px) {
+            // font-size: 16px;
+            // margin-bottom: 30px;
+        }
     }
 
     &__label {
-        font-size: 17px;
+        display: block;
+        font-size: 15px;
+        margin-bottom: 12px;
 
         span {
             display: inline-block;
@@ -113,11 +137,9 @@ $form-input-padding: 25px;
     }
 
     &__select {
-        background-color: $form-input-bg;
-        border: 1px solid $form-input-border;
+        background-color: transparent;
         color: #3f3e3c;
         font-size: 22px;
-        margin-bottom: 20px;
         padding: 0 $form-input-padding;
         height: $form-input-height;
         width: 100%;
@@ -127,19 +149,20 @@ $form-input-padding: 25px;
         @include placeholder {
             color: #3f3e3c;
         }
-        background-color: $form-input-bg;
-        border: 1px solid $form-input-border;
+        background-color: transparent;
         color: #3f3e3c;
-        font-size: 22px;
-        margin-bottom: 20px;
+        font-size: 16px;
         padding: 0 $form-input-padding;
         height: $form-input-height;
         width: 100%;
     }
 
     &__btn {
+        margin-bottom: 14px;
         position: relative;
-        font-size: 22px;
+        font-size: 20px;
+        height: $form-input-height;
+        width: 100%;
 
         &_center {
             display: block;
@@ -166,5 +189,39 @@ $form-input-padding: 25px;
                 }
             }
         }
+
+        @media screen and (max-width:768px) {
+            font-size: 18px;
+        }
+    }
+
+    &__security-text.form__security-text {
+        display: inline;
+        font-size: 12px;
+    }
+
+    &__security-text_big.form__security-text {
+        display: inline;
+        font-size: 16px;
+    }
+
+    &__security-link {
+        color: currentColor;
+        display: inline;
+    }
+
+    &__img-gift {
+        transform: translate(55%, 20%);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        @include media(w768) {
+            display: none;
+        }
+    }
+
+    &__gift-btn {
+        width: 100%;
     }
 }

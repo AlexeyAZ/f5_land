@@ -4,51 +4,162 @@
     <meta charset="utf-8">
     <meta name="description" content=""><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Main</title>
+    <title>Франчайзинг5</title>
     <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="styles/vendor.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none;"></svg>
+    <div class="form-wrap form-wrap_small">
+      <div class="form-container" id="smallFormContainer">
+        <div class="form__close"></div>
+        <p class="form__heading">Оставьте заявку на презентацию франшизы</p>
+        <form class="form" id="smallForm" data-next="#bigForm" data-goal="ORDER">
+          <label class="form__label">
+            <input class="input input_modal form__input" type="text" name="name" placeholder="Ваше имя" required="">
+          </label>
+          <label class="form__label">
+            <input class="input input_modal form__input" type="text" name="phone" placeholder="Ваш телефон" required="">
+          </label>
+          <label class="form__label">
+            <input class="input input_modal form__input" type="email" name="email" placeholder="Ваш email" required="">
+          </label>
+          <button class="btn-round form__btn js-big-btn">Отправить</button>
+          <label class="form__label">
+            <input type="checkbox" checked required><span class="form__security-text">Нажимая кнопку «Получить предложение», я даю согласие на обработку персональных данных и соглашаюсь с <a class="form__security-link" href="doc/politic.pdf" target="_blank">политикой конфиденциальности</a></span>
+          </label>
+        </form>
+      </div>
+    </div>
+    <div class="form-wrap form-wrap_big">
+      <div class="form-container" id="bigFormContainer">
+        <div class="form__close"></div>
+        <p class="form__title">Спасибо!</p>
+        <p class="form__descr">В ближайшее время мы обработаем Вашу заявку. Для того, чтобы наш специалист мог максимально подробно ответить на все Ваши вопросы, заполните, пожалуйста, следующую форму. Заранее благодарим!</p>
+        <form class="form" method="POST" data-goal="ORDER" id="bigForm">
+          <input class="js-hidden-name" type="hidden" name="name1">
+          <input class="js-hidden-phone" type="hidden" name="phone1">
+          <input class="js-hidden-phone" type="hidden" name="email1">
+          <label class="form__label"><span>Введите Ваш город</span>
+            <input class="input input_modal form__input" type="text" name="city" placeholder="Иваново" required="">
+          </label>
+          <label class="form__label"><span>Введите Ваш возраст</span>
+            <input class="input input_modal form__input" type="text" name="age" placeholder="27" required="">
+          </label>
+          <label class="form__label"><span>Наличие бизнеса / Опыт бизнеса</span>
+            <select class="select form__input" name="UF_CRM_1433149149">
+              <option value="yes">Да</option>
+              <option value="no">Нет</option>
+            </select>
+          </label>
+          <label class="form__label"><span>Объем планируемых инвестиций</span>
+            <select class="select form__input" name="UF_CRM_1433149089">
+              <option value="100 000 - 250 000">100 000 — 250 000 рублей</option>
+              <option value="250 000 - 500 000">250 000 — 500 000 рублей</option>
+              <option value="500 000 - 750 000">500 000 — 750 000 рублей</option>
+              <option value="750 000 - 1 000 000">750 000 — 1 000 000 рублей</option>
+              <option value="1 000 000 - 1 500 000">1 000 000 — 1 500 000 рублей</option>
+              <option value="1 500 000 - 3 000 000">1 500 000 — 3 000 000 рублей</option>
+              <option value="3 000 000">Более 3 000 000 рублей</option>
+            </select>
+          </label>
+          <button class="btn-round form__btn form__btn_center">Получить предложение</button>
+          <label class="form__label">
+            <input type="checkbox" checked required><span class="form__security-text">Нажимая кнопку «Получить предложение», я даю согласие на обработку персональных данных и соглашаюсь с <a class="form__security-link" href="doc/politic.pdf" target="_blank">политикой конфиденциальности</a></span>
+          </label>
+        </form>
+      </div>
+    </div>
+    <div class="form-wrap form-wrap_gift" id="giftForm">
+      <div class="form-container form-container_gift">
+        <div class="form__close"></div>
+        <p class="form__heading ta-center">Не спешите уходить!</p>
+        <p class="s italic ta-center">У нас есть специальное предложение для вас</p>
+        <form class="form" method="POST" data-goal="ORDER">
+          <label class="form__label">
+            <input class="input input_modal" type="email" name="email" placeholder="Введите ваш e-mail" required="">
+          </label>
+          <label class="form__label">
+            <button class="btn-round btn-round_main form__gift-btn">Получить предложение</button>
+          </label>
+          <label class="form__label">
+            <input type="checkbox" checked required><span class="form__security-text form__security-text_big">Даю согласие на использование и обработку моих персональных данных</span>
+          </label>
+        </form><img class="form__img-gift" src="img/gift.png" alt="">
+      </div>
+    </div>
     <section class="sec thanks">
       <header class="header">
         <div class="container header__container">
-          <div class="header__item header__item_logo"><a class="header__logo" href="/"><img class="header__logo-img" src="img/header-logo.png" alt="">
-              <div>Масштабирование<br> прибыльных бизнесов<br>по франчайзингу</div></a></div>
+          <div class="header__item header__item_logo"><a class="header__logo" href="/"><img class="header__logo-img" src="img/header-logo.svg" alt=""></a></div>
           <div class="header__item header__item_contacts"><a class="header__link phone" href="tel:88003331963" data-phone="88003331963">8 (800) 333-19-63</a><a class="header__link link link_getcall js-small-btn" href="">Бесплатно по России</a></div>
         </div>
       </header>
       <div class="container">
-        <p class="thanks__heading"><span id="thanksName"></span> менеджеры уже занимаются вашей заявкой</p>
-        <p class="thanks__title">Мы свяжемся с Вами в ближайшее время</p>
-        <div class="thanks__buttons"><a class="btn-round btn-round_download" href="doc/mk.pdf" target="_blank">Открыть презентацию</a><a class="thanks__links-link" href="/index.html">Вернуться на сайт</a></div>
-        <p class="thanks__subtitle">График работы с 9.00 до 23.00 Поэтому, если вы оставили заявку в нерабочее время, мы перезвоним вам на следующий рабочий день</p>
+        <div class="thanks__text color-white">
+          <p class="thanks__heading"><span id="thanksName"></span> менеджеры уже занимаются вашей заявкой</p>
+          <p class="thanks__title">Мы свяжемся с Вами в ближайшее время</p>
+          <p class="thanks__subtitle">График работы: с 9 00 до 18 00. Поэтому, если вы оставили заявку в нерабочее время, мы перезвоним вам на следующий день</p>
+        </div>
+        <div class="thanks__buttons"><a class="btn-round thanks__buttons-button" href="doc/mk.pdf" target="_blank">Скачать презентацию<span>. PDF, 20 Mb</span></a><a class="thanks__links-link" href="/index.html"><span class="thanks__links-link-arrow"></span>Вернуться на сайт</a></div>
+      </div>
+      <div class="thanks__img-wrap"><img class="thanks__img" src="img/sec1-img.png" alt="">
+        <div class="thanks__img-text">
+          <p class="s italic">Артем Захаров</p>
+          <p class="thanks__img-subtext">Генеральный директор<br> ООО «Франчайзинг5»</p>
+        </div>
       </div>
     </section>
     <footer class="footer">
       <div class="container footer__container">
-        <div class="footer__block footer__block_social">
-          <p class="footer__text footer__text_copy">© 2017, «Уномоменто»</p>
-          <div class="footer__social">
-            <p class="footer__text footer__text_social-title">Мы в соц. сетях</p>
-            <ul class="footer__social-list">
-              <li class="footer__social-item"><a class="footer__link footer__link_social" href="" target="_blank"><i class="fa fa-vk"></i></a></li>
-              <li class="footer__social-item"><a class="footer__link footer__link_social" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
-              <li class="footer__social-item"><a class="footer__link footer__link_social" href="" target="_blank"><i class="fa fa-tripadvisor"></i></a></li>
-            </ul>
+        <div class="footer__block footer__block_info">
+          <div class="footer__info"><a href="/"><img class="footer__info-img" src="img/footer-logo.svg" alt=""></a></div>
+        </div>
+        <div class="footer__block footer__block_company">
+          <div class="footer__info-list">
+            <p class="footer__info-list-item">ООО «ФРАНЧАЙЗИНГ5»</p>
+            <p class="footer__info-list-item">ИНН/КПП 1655296086/165901001</p>
+            <p class="footer__info-list-item">ОГРН 1141690046552</p>
           </div>
         </div>
         <div class="footer__block footer__block_contacts">
-          <p class="footer__text footer__text_adress">Наш офис: Пермь, ул. Шоссе Космонавтов, 111, корпус 2</p>
-          <div class="footer__contacts"><a class="footer__text footer__link footer__link_politic" href="doc/politic.pdf" target="_blank">Политика конфиденциальности</a>
-            <p class="footer__text">e-mail:<a class="footer__link" href="mailto:uno@uno-perm.ru">uno@uno-perm.ru</a></p>
-          </div>
+          <p class="footer__text footer__text_adress">Наш офис: г. Казань, ул. Сайдашева,<br> д 12, 6 этаж, Бизнес центр «Рябина»</p><a class="footer__link footer__link_map" href="https://www.google.ru/maps/place/%D0%A0%D1%8F%D0%B1%D0%B8%D0%BD%D0%B0/@55.773235,49.1146081,17z/data=!4m13!1m7!3m6!1s0x415eacffc49ce9e9:0xb1d4b3627580bdf0!2z0YPQuy4g0KHQsNC70LjRhdCwINCh0LDQudC00LDRiNC10LLQsCwgMTIsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L8uINCi0LDRgtCw0YDRgdGC0LDQvSwgNDIwMDIx!3b1!8m2!3d55.7722936!4d49.1169041!3m4!1s0x0:0x103669378a6ff6d8!8m2!3d55.7729162!4d49.1141177" target="_blank">Схема проезда</a>
         </div>
-        <div class="footer__block footer__block_feedback"><a class="footer__phone" href="tel:88003331963" data-phone="88003331963">8 (800) 333-19-63</a><a class="footer__link footer__link_getcall js-small-btn">Заказать звонок</a></div>
+        <div class="footer__block footer__block_feedback"><a class="footer__phone" href="tel:88003331963" data-phone="88003331963">8 (800) 333-19-63</a>
+          <p class="footer__phone-note footer__text mb0">Бесплатно по России</p><a class="footer__text footer__link footer__link_politic" href="doc/politic.pdf" target="_blank">Политика конфиденциальности</a>
+        </div>
       </div>
     </footer>
     <script src="scripts/vendor.js"></script>
     <script src="scripts/app.js"></script>
+    <!--Yandex.Metrika counter-->
+    <script type="text/javascript">
+      (function (d, w, c) {
+          (w[c] = w[c] || []).push(function() {
+              try {
+                  w.yaCounter28535971 = new Ya.Metrika({
+                      id:28535971,
+                      clickmap:true,
+                      trackLinks:true,
+                      accurateTrackBounce:true,
+                      webvisor:true
+                  });
+              } catch(e) { }
+          });
+      
+          var n = d.getElementsByTagName("script")[0],
+              s = d.createElement("script"),
+              f = function () { n.parentNode.insertBefore(s, n); };
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://mc.yandex.ru/metrika/watch.js";
+      
+          if (w.opera == "[object Opera]") {
+              d.addEventListener("DOMContentLoaded", f, false);
+          } else { f(); }
+      })(document, window, "yandex_metrika_callbacks");
+    </script><noscript><div><img src="https://mc.yandex.ru/watch/28535971" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter-->
   </body>
 </html>

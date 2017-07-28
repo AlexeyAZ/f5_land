@@ -1,4 +1,4 @@
-- var sec3List = [{name:"Выручка", price:"680 000", id:"price"},{name:"Средний чек от упаковки франшиз", price:"680 000"}, {name:"Средний чек от продажи франшиз", price:"680 000"}, {name:"Организационные затраты", price:"680 000"}, {name:"Фонд оплаты труда", price:"680 000"}, {name:"Налог (УСН 6%)", price:"680 000"}];
+- var sec3List = [{name:"Выручка", price:"680 000", id:"proceeds"},{name:"Средний чек от упаковки франшиз", price:"213 000", id: "middlecheck"}, {name:"Средний чек от продажи франшиз", price:"200 000", id: "middlechecksale"}, {name:"Организационные затраты", price:"87 400", id:"orgcost"}, {name:"Фонд оплаты труда", price:"52 000", id:"salaryfond"}, {name:"Налог (УСН 6%)", price:"680 000", id: "tax"}];
 
 section.sec.sec3
     div.container.color-white
@@ -31,14 +31,21 @@ section.sec.sec3
                     div.sec3__note
                         div.sec3__note-text.
                             Вы заработаете
-                    div.sec3__summ.
+                    div#profit.sec3__summ.
                         340 000
-                    div.sec3__summ-note.
-                        за 1 месяц
+                    div.sec3__summ-note
+                        |за 
+                        |
+                        span#monthNumber.
+                            1
+                        |
+                        |
+                        span#monthStr.
+                            месяц
     div.sec3__bottom
         div.container
             div.sec3__bottom-row
                 p.l.italic.color-white.sec3__bottom-title.mb0.
-                    Узнайте, как заработать <span>340 000</span> за 1 месяц в PDF-презентации франшизы
+                    Узнайте, как заработать <span>340 000</span><br> за 1 месяц в PDF-презентации франшизы
                 button.btn-round.btn-round_download.js-small-btn.sec3__btn.
                     Скачать презентацию <span>франшизы</span>

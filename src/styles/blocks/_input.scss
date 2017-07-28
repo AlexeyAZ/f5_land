@@ -61,21 +61,31 @@
             height: 60px;
         }
     }
+
+    &_modal {
+        @include placeholder{
+            color: #4f4f4f;
+        }
+        border: 2px solid #adadad;
+        color: black;
+    }
 }
 
 .select {
-    background-color: white;
+    background-color: transparent;
     background-repeat: no-repeat;
     border-radius: $btn-height-pc / 2;
     border-radius: calc(#{$btn-height-pc} / 2);
-    border: 2px solid #d7d7d7;
+    border: 2px solid #adadad;
     outline: none;
     display: inline-block;
     color: #6b6b6b;
+    font-style: italic;
     font-family: "PFHandBookPro", sans-serif;
     font-size: $input-font-size-pc;
     padding: 0 35px;
     height: $btn-height-pc;
+    width: 100%;
 
     @include media (w1024) {
         border-radius: $btn-height-tablet / 2;

@@ -60,10 +60,12 @@ a {
 
         &:after {
             content: "PDF, 20Mb";
+            transform: translateY(-50%);
             font-family: "PFAgoraSansPro", Arial, Helvetica, sans-serif;
             font-size: 18px;
             font-weight: 300;
             position: absolute;
+            top: 50%;
             left: calc(100% + 20px);
             white-space: nowrap;
 
@@ -98,6 +100,16 @@ a {
         
         &:after {
             content: none;
+        }
+    }
+
+    &_border {
+        border: 5px solid #cf4378 !important;
+        background-color: transparent;
+        color: black;
+
+        &:hover {
+            color: white;
         }
     }
 }

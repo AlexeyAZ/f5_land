@@ -1,33 +1,27 @@
 footer.footer
     div.container.footer__container
-        div.footer__block.footer__block_social
-            p.footer__text.footer__text_copy.
-                © 2017, «Уномоменто»
-            div.footer__social
-                p.footer__text.footer__text_social-title.
-                    Мы в соц. сетях
-                ul.footer__social-list
-                    li.footer__social-item
-                        a(href="" target="_blank").footer__link.footer__link_social
-                            i.fa.fa-vk
-                    li.footer__social-item
-                        a(href="" target="_blank").footer__link.footer__link_social
-                            i.fa.fa-facebook
-                    li.footer__social-item
-                        a(href="" target="_blank").footer__link.footer__link_social
-                            i.fa.fa-tripadvisor
+        div.footer__block.footer__block_info
+            div.footer__info
+                a(href="/")
+                    img(src="img/footer-logo.svg", alt="").footer__info-img
+                    
+        div.footer__block.footer__block_company
+            div.footer__info-list
+                p.footer__info-list-item.
+                    ООО «ФРАНЧАЙЗИНГ5»
+                p.footer__info-list-item.
+                    ИНН/КПП 1655296086/165901001
+                p.footer__info-list-item.
+                    ОГРН 1141690046552
         div.footer__block.footer__block_contacts
             p.footer__text.footer__text_adress.
-                Наш офис: Пермь, ул. Шоссе Космонавтов, 111, корпус 2
-            div.footer__contacts
-                a(href="doc/politic.pdf" target="_blank").footer__text.footer__link.footer__link_politic.
-                    Политика конфиденциальности
-                p.footer__text
-                    |e-mail:
-                    a(href="mailto:uno@uno-perm.ru").footer__link.
-                        uno@uno-perm.ru
+                Наш офис: г. Казань, ул. Сайдашева,<br> д 12, 6 этаж, Бизнес центр «Рябина»
+            a(href="https://www.google.ru/maps/place/%D0%A0%D1%8F%D0%B1%D0%B8%D0%BD%D0%B0/@55.773235,49.1146081,17z/data=!4m13!1m7!3m6!1s0x415eacffc49ce9e9:0xb1d4b3627580bdf0!2z0YPQuy4g0KHQsNC70LjRhdCwINCh0LDQudC00LDRiNC10LLQsCwgMTIsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L8uINCi0LDRgtCw0YDRgdGC0LDQvSwgNDIwMDIx!3b1!8m2!3d55.7722936!4d49.1169041!3m4!1s0x0:0x103669378a6ff6d8!8m2!3d55.7729162!4d49.1141177" target="_blank").footer__link.footer__link_map.
+                Схема проезда
         div.footer__block.footer__block_feedback
             a(href="tel:" + attrPhone)&attributes({'data-phone': attrPhone}).footer__phone.
                 #{phone}
-            a().footer__link.footer__link_getcall.js-small-btn.
-                Заказать звонок
+            p.footer__phone-note.footer__text.mb0.
+                Бесплатно по России
+            a(href="doc/politic.pdf" target="_blank").footer__text.footer__link.footer__link_politic.
+                Политика конфиденциальности

@@ -3,35 +3,42 @@ div.form-wrap.form-wrap_small
         div.form__close
         p.form__heading.
             Оставьте заявку на презентацию франшизы
-        form#smallForm.form(data-next="#bigForm")
-            input(type="text" name="name" placeholder="Ваше имя" required="").form__input
-            input(type="text" name="phone" placeholder="Ваш телефон" required="").form__input
-            input(type="email" name="email" placeholder="Ваш email" required="").form__input
-            button.btn-round.form__btn.form__btn_size.js-big-btn.
-                Скачать
+        form#smallForm.form(data-next="#bigForm" data-goal="ORDER")
+            label.form__label
+                input(type="text" name="name" placeholder="Ваше имя" required="").input.input_modal.form__input
+            label.form__label
+                input(type="text" name="phone" placeholder="Ваш телефон" required="").input.input_modal.form__input
+            label.form__label
+                input(type="email" name="email" placeholder="Ваш email" required="").input.input_modal.form__input
+            button.btn-round.form__btn.js-big-btn.
+                Отправить
+            label.form__label
+                input(type="checkbox" checked required)
+                span.form__security-text.
+                    Нажимая кнопку "Получить предложение", я даю согласие на обработку персональных данных и соглашаюсь с <a class="form__security-link" href="doc/politic.pdf" target="_blank">политикой конфиденциальности</a>
 div.form-wrap.form-wrap_big
     div#bigFormContainer.form-container
         div.form__close
         p.form__title.
             Спасибо!
         p.form__descr.
-            В ближайшее время мы обработаем Вашу заявку. Для того, чтобы наш специалист мог максимально подробно ответить на все Ваши вопросы, заполните, пожалуйста, следующую форму. Заранее благодарим
-        form(method="POST")#bigForm.form
+            В ближайшее время мы обработаем Вашу заявку. Для того, чтобы наш специалист мог максимально подробно ответить на все Ваши вопросы, заполните, пожалуйста, следующую форму. Заранее благодарим!
+        form(method="POST" data-goal="ORDER")#bigForm.form
             input(type="hidden" name="name1").js-hidden-name
             input(type="hidden" name="phone1").js-hidden-phone
             input(type="hidden" name="email1").js-hidden-phone
             label.form__label
                 span.
                     Введите Ваш город
-                input(type="text" name="city" placeholder="" required="").form__input
+                input(type="text" name="city" placeholder="Иваново" required="").input.input_modal.form__input
             label.form__label
                 span.
                     Введите Ваш возраст
-                input(type="text" name="age" placeholder="" required="").form__input
+                input(type="text" name="age" placeholder="27" required="").input.input_modal.form__input
             label.form__label
                 span.
                     Наличие бизнеса / Опыт бизнеса
-                select(name="business").form__select
+                select(name="UF_CRM_1433149149").select.form__input
                     option(value="yes").
                         Да
                     option(value="no").
@@ -39,7 +46,7 @@ div.form-wrap.form-wrap_big
             label.form__label
                 span.
                     Объем планируемых инвестиций
-                select(name="volume").form__select
+                select(name="UF_CRM_1433149089").select.form__input
                     option(value="100 000 - 250 000").
                         100 000 - 250 000 рублей
                     option(value="250 000 - 500 000").
@@ -56,3 +63,25 @@ div.form-wrap.form-wrap_big
                         Более 3 000 000 рублей
             button.btn-round.form__btn.form__btn_center.
                 Получить предложение
+            label.form__label
+                input(type="checkbox" checked required)
+                span.form__security-text.
+                    Нажимая кнопку "Получить предложение", я даю согласие на обработку персональных данных и соглашаюсь с <a class="form__security-link" href="doc/politic.pdf" target="_blank">политикой конфиденциальности</a>
+div#giftForm.form-wrap.form-wrap_gift
+    div.form-container.form-container_gift
+        div.form__close
+        p.form__heading.ta-center.
+            Не спешите уходить!
+        p.s.italic.ta-center.
+            У нас есть специальное предложение для вас
+        form(method="POST" data-goal="ORDER").form
+            label.form__label
+                input(type="email" name="email" placeholder="Введите ваш e-mail" required="").input.input_modal
+            label.form__label
+                button.btn-round.btn-round_main.form__gift-btn.
+                    Получить предложение
+            label.form__label
+                input(type="checkbox" checked required)
+                span.form__security-text.form__security-text_big.
+                    Даю согласие на использование и обработку моих персональных данных
+        img(src="img/gift.png", alt="").form__img-gift

@@ -2,7 +2,7 @@ section.sec.sec7
     div.container.ta-center
         h3.color-white.ta-center.bold.mb1.
             Узнайте точную стоимость франшизы для своего города
-        form.sec7__form
+        form#sec7Form(data-goal="ORDER").sec7__form
             label.sec7__form-label
                 input(name="city" placeholder="Ваш город" required).input
             label.sec7__form-label
@@ -12,3 +12,8 @@ section.sec.sec7
             label.sec7__form-label
                 button.btn-round.sec7__form-btn.
                     Узнать стоимость
+            div.color-white.sec7__form-security
+                label
+                    input(type="checkbox" checked required)
+                    span.form__security-text.form__security-text_big.
+                        Нажимая кнопку "Получить предложение", я даю согласие на обработку персональных данных и соглашаюсь с <a class="form__security-link" href="doc/politic.pdf" target="_blank">политикой конфиденциальности</a>

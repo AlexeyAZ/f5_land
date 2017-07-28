@@ -1,24 +1,29 @@
 section.sec.sec5
     div.container.sec5__container
-        h3.ta-center.bold.
-            Мы открыли 83 офиса по всей России и СНГ
+        h3.ta-center.bold.sec5__heading.
+            Мы открыли более 100 офисов<br> по всей России и СНГ
         p.l.italic.ta-center.mb2.
             В некоторых городах мы открываем только одно представительство
         div.sheets.sec5__sheets
             p.l.medium.ta-center.mb1.
                 Проверьте возможность открытия офиса в своем городе
-            form(data-next="#bigForm")#sec5Form.sec5__form
+            form(data-next="#bigForm" data-goal="ORDER")#sec5Form.sec5__form
                 div.sec5__form-row
                     label(for="sec5InputCity").sec5__form-label.
                         Ваш город
                     input#sec5InputCity(name="city" placeholder="Москва" required).sec5__form-input.input.input_small
                 div.sec5__form-row
-                    label(for="sec5InputCity").sec5__form-label.
+                    label(for="sec5InputPhone").sec5__form-label.
                         Ваш телефон
-                    input#sec5InputCity(name="phone" type="tel" required).sec5__form-input.input.input_small
+                    input#sec5InputPhone(name="phone" type="tel" placeholder="+7 (___) ___-__-__" required).sec5__form-input.input.input_small
                 div.sec5__form-row
-                    label(for="sec5InputCity").sec5__form-label.
+                    label(for="sec5InputEmail").sec5__form-label.
                         E-mail
-                    input#sec5InputCity(name="email" type="email" placeholder="example@yandex.ru" required).sec5__form-input.input.input_small
+                    input#sec5InputEmail(name="email" type="email" placeholder="example@yandex.ru" required).sec5__form-input.input.input_small
                 button.btn-round.sec5__form-btn.
-                    проверить город
+                    Проверить город
+                div
+                    label
+                        input(type="checkbox" checked required)
+                        span.form__security-text.form__security-text_big.
+                            Нажимая кнопку "Получить предложение", я даю согласие на обработку персональных данных и соглашаюсь с <a class="form__security-link" href="doc/politic.pdf" target="_blank">политикой конфиденциальности</a>

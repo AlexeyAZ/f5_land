@@ -12,6 +12,7 @@
 
     &__form {
         display: flex;
+        flex-flow: wrap;
 
         @include media(w1200) {
             flex-flow: wrap;
@@ -19,6 +20,7 @@
     }
 
     &__form-label {
+        display: block;
         padding-right: 20px;
         width: 25%;
 
@@ -33,9 +35,20 @@
     }
 
     &__form-input {
+        
+        @include placeholder {
+            font-size: $input-font-size-pc;
+        }
 
         &_phone {
             font-size: 20px;
+        }
+
+        @include media(w1024) {
+
+            @include placeholder {
+                font-size: $input-font-size-tablet;
+            }
         }
     }
 
@@ -44,5 +57,9 @@
         @include media(w1200) {
             width: 100%;
         }
+    }
+
+    &__form-security {
+        margin-top: 1em;
     }
 }

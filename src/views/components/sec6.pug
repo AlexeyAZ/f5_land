@@ -7,14 +7,14 @@
 - sec6Names.push({name:"Настройка и обучение работы в системе", values: [11, 10]});
 - sec6Names.push({name:"Запуск маркетинговой кампании", values: [10, 15]});
 - sec6Names.push({name:"Настройка и обучение работы в CRM-системе", values: [11, 1]});
-- sec6Names.push({name:"Запуск интернет продвижения", values: [10, 14]});
-- sec6Names.push({name:"Подпись части актов, договоренности", values: [20, 1]});
+- sec6Names.push({name:"Запуск интернет-продвижения", values: [10, 14]});
+- sec6Names.push({name:"Подписание части актов, договоренности", values: [20, 1]});
 - sec6Names.push({name:"Торжественное открытие. Начало продаж", values: [21, 1]});
 
 section.sec.sec6
     div.container
         h3.ta-center.bold.
-            Откройте свой филиал «Франчайзинг5» за 21 день
+            Откройте свой филиал «Франчайзинг5»<br> за 21 день
         div.sec6__block
             each item, index in sec6Names
                 div.sec6__block-row
@@ -26,3 +26,8 @@ section.sec.sec6
                             each value in item.values
                                 div.sec6__block-line.
                                     #{value}
+            div.sec6__description
+                div.sec6__description-item.sec6__description-item_dark.
+                    - количество дней до задачи
+                div.sec6__description-item.sec6__description-item_light.
+                    - количество дней на задачу

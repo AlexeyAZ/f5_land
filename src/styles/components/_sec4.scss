@@ -123,10 +123,39 @@ $sec4-list-title-hover: #4e3187;
         overflow: hidden;
     }
 
+    &__list-table {
+        counter-reset: item;
+    }
+
+    &__list-table-item {
+        padding: 0;
+    }
+
+    &__list-table-item-text {
+        display: inline-block;
+        counter-increment: item;
+
+        &:before {
+            content: counter(item) ". ";
+        }
+    }
+
     &__door {
         transform: translateX(-20px);
         margin-top: 60px;
         position: relative;
+    }
+
+    &__door-logo {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        z-index: 2;
+        max-width: 300px;
+
+        @include media(w1100) {
+            max-width: 280px;
+        }
     }
 
     &__doorleft {
@@ -135,10 +164,15 @@ $sec4-list-title-hover: #4e3187;
         z-index: 3;
     }
 
-    &__doorright {
+    &__doorright-wrap {
         position: absolute;
         top: -62px;
+        left: 237px;
         z-index: 1;
+    }
+
+    &__doorright {
+        
     }
 
     &__doorimg {

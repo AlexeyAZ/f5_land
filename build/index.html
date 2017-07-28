@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content=""><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Main</title>
+    <title>Франчайзинг5</title>
     <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="styles/vendor.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -15,11 +15,20 @@
       <div class="form-container" id="smallFormContainer">
         <div class="form__close"></div>
         <p class="form__heading">Оставьте заявку на презентацию франшизы</p>
-        <form class="form" id="smallForm" data-next="#bigForm">
-          <input class="form__input" type="text" name="name" placeholder="Ваше имя" required="">
-          <input class="form__input" type="text" name="phone" placeholder="Ваш телефон" required="">
-          <input class="form__input" type="email" name="email" placeholder="Ваш email" required="">
-          <button class="btn-round form__btn form__btn_size js-big-btn">Скачать</button>
+        <form class="form" id="smallForm" data-next="#bigForm" data-goal="ORDER">
+          <label class="form__label">
+            <input class="input input_modal form__input" type="text" name="name" placeholder="Ваше имя" required="">
+          </label>
+          <label class="form__label">
+            <input class="input input_modal form__input" type="text" name="phone" placeholder="Ваш телефон" required="">
+          </label>
+          <label class="form__label">
+            <input class="input input_modal form__input" type="email" name="email" placeholder="Ваш email" required="">
+          </label>
+          <button class="btn-round form__btn js-big-btn">Отправить</button>
+          <label class="form__label">
+            <input type="checkbox" checked required><span class="form__security-text">Нажимая кнопку «Получить предложение», я даю согласие на обработку персональных данных и соглашаюсь с <a class="form__security-link" href="doc/politic.pdf" target="_blank">политикой конфиденциальности</a></span>
+          </label>
         </form>
       </div>
     </div>
@@ -27,25 +36,25 @@
       <div class="form-container" id="bigFormContainer">
         <div class="form__close"></div>
         <p class="form__title">Спасибо!</p>
-        <p class="form__descr">В ближайшее время мы обработаем Вашу заявку. Для того, чтобы наш специалист мог максимально подробно ответить на все Ваши вопросы, заполните, пожалуйста, следующую форму. Заранее благодарим</p>
-        <form class="form" method="POST" id="bigForm">
+        <p class="form__descr">В ближайшее время мы обработаем Вашу заявку. Для того, чтобы наш специалист мог максимально подробно ответить на все Ваши вопросы, заполните, пожалуйста, следующую форму. Заранее благодарим!</p>
+        <form class="form" method="POST" data-goal="ORDER" id="bigForm">
           <input class="js-hidden-name" type="hidden" name="name1">
           <input class="js-hidden-phone" type="hidden" name="phone1">
           <input class="js-hidden-phone" type="hidden" name="email1">
           <label class="form__label"><span>Введите Ваш город</span>
-            <input class="form__input" type="text" name="city" placeholder="" required="">
+            <input class="input input_modal form__input" type="text" name="city" placeholder="Иваново" required="">
           </label>
           <label class="form__label"><span>Введите Ваш возраст</span>
-            <input class="form__input" type="text" name="age" placeholder="" required="">
+            <input class="input input_modal form__input" type="text" name="age" placeholder="27" required="">
           </label>
           <label class="form__label"><span>Наличие бизнеса / Опыт бизнеса</span>
-            <select class="form__select" name="business">
+            <select class="select form__input" name="UF_CRM_1433149149">
               <option value="yes">Да</option>
               <option value="no">Нет</option>
             </select>
           </label>
           <label class="form__label"><span>Объем планируемых инвестиций</span>
-            <select class="form__select" name="volume">
+            <select class="select form__input" name="UF_CRM_1433149089">
               <option value="100 000 - 250 000">100 000 — 250 000 рублей</option>
               <option value="250 000 - 500 000">250 000 — 500 000 рублей</option>
               <option value="500 000 - 750 000">500 000 — 750 000 рублей</option>
@@ -56,14 +65,34 @@
             </select>
           </label>
           <button class="btn-round form__btn form__btn_center">Получить предложение</button>
+          <label class="form__label">
+            <input type="checkbox" checked required><span class="form__security-text">Нажимая кнопку «Получить предложение», я даю согласие на обработку персональных данных и соглашаюсь с <a class="form__security-link" href="doc/politic.pdf" target="_blank">политикой конфиденциальности</a></span>
+          </label>
         </form>
+      </div>
+    </div>
+    <div class="form-wrap form-wrap_gift" id="giftForm">
+      <div class="form-container form-container_gift">
+        <div class="form__close"></div>
+        <p class="form__heading ta-center">Не спешите уходить!</p>
+        <p class="s italic ta-center">У нас есть специальное предложение для вас</p>
+        <form class="form" method="POST" data-goal="ORDER">
+          <label class="form__label">
+            <input class="input input_modal" type="email" name="email" placeholder="Введите ваш e-mail" required="">
+          </label>
+          <label class="form__label">
+            <button class="btn-round btn-round_main form__gift-btn">Получить предложение</button>
+          </label>
+          <label class="form__label">
+            <input type="checkbox" checked required><span class="form__security-text form__security-text_big">Даю согласие на использование и обработку моих персональных данных</span>
+          </label>
+        </form><img class="form__img-gift" src="img/gift.png" alt="">
       </div>
     </div>
     <section class="sec sec1">
       <header class="header">
         <div class="container header__container">
-          <div class="header__item header__item_logo"><a class="header__logo" href="/"><img class="header__logo-img" src="img/header-logo.png" alt="">
-              <div>Масштабирование<br> прибыльных бизнесов<br>по франчайзингу</div></a></div>
+          <div class="header__item header__item_logo"><a class="header__logo" href="/"><img class="header__logo-img" src="img/header-logo.svg" alt=""></a></div>
           <div class="header__item header__item_contacts"><a class="header__link phone" href="tel:88003331963" data-phone="88003331963">8 (800) 333-19-63</a><a class="header__link link link_getcall js-small-btn" href="">Бесплатно по России</a></div>
         </div>
       </header>
@@ -86,7 +115,7 @@
     <section class="sec sec2">
       <div class="container ta-center">
         <h3 class="bold">Простые действия, <br>которые приведут Вас к прибыли</h3>
-        <p class="italic l mb1">Посмотрите схему работы филиала «Франчайзинг5»</p>
+        <p class="italic l mb1">Посмотрите схему работы филиала Франчайзинг5</p>
         <div class="sec2__list">
           <div class="sec2__list-item">
             <div class="sec2__list-col sec2__list-col_text">
@@ -112,7 +141,7 @@
             <div class="sec2__list-col sec2__list-col_text">
               <div class="sec2__list-icon"><img class="sec2__list-icon-img" src="img/sec2-icon3.png" alt=""></div>
               <p class="sec2__list-title">Мы берем всю работу по упаковке франшизы на себя</p>
-              <p class="xs">Средний чек с каждой сделки по упаковке франшиз 710 000. Половина этих денег — ваша прибыль</p>
+              <p class="xs">Средний чек с каждой сделки по упаковке франшиз 710 000 рублей. Половина этих денег — Ваша прибыль</p>
             </div>
             <div class="sec2__list-col sec2__list-col_img">
               <div class="sec2__list-img" style="background-image:url('img/sec2-img3.jpg');"><img class="sec2__list-img-tablet" src="img/sec2-img3.jpg" alt=""></div>
@@ -122,7 +151,7 @@
             <div class="sec2__list-col sec2__list-col_text">
               <div class="sec2__list-icon"><img class="sec2__list-icon-img" src="img/sec2-icon4.png" alt=""></div>
               <p class="sec2__list-title">Вы продаете упакованную франшизу</p>
-              <p class="xs">И получаете дополнительный доход от 80 000 с одной продажи</p>
+              <p class="xs">И получаете дополнительный доход от 80 000 рублей с одной продажи</p>
             </div>
             <div class="sec2__list-col sec2__list-col_img">
               <div class="sec2__list-img" style="background-image:url('img/sec2-img4.jpg');"><img class="sec2__list-img-tablet" src="img/sec2-img4.jpg" alt=""></div>
@@ -154,33 +183,37 @@
             <div class="sheets sec3__values color-black">
               <div class="sec3__values-row">
                 <div class="sec3__values-name">Выручка</div>
-                <div class="sec3__values-number" id="price">680 000</div>
+                <div class="sec3__values-number" id="proceeds">680 000</div>
               </div>
               <div class="sec3__values-row">
                 <div class="sec3__values-name">Средний чек от упаковки франшиз</div>
-                <div class="sec3__values-number">680 000</div>
+                <div class="sec3__values-number" id="middlecheck">213 000</div>
               </div>
               <div class="sec3__values-row">
                 <div class="sec3__values-name">Средний чек от продажи франшиз</div>
-                <div class="sec3__values-number">680 000</div>
+                <div class="sec3__values-number" id="middlechecksale">200 000</div>
               </div>
               <div class="sec3__values-row">
                 <div class="sec3__values-name">Организационные затраты</div>
-                <div class="sec3__values-number">680 000</div>
+                <div class="sec3__values-number" id="orgcost">87 400</div>
               </div>
               <div class="sec3__values-row">
                 <div class="sec3__values-name">Фонд оплаты труда</div>
-                <div class="sec3__values-number">680 000</div>
+                <div class="sec3__values-number" id="salaryfond">52 000</div>
               </div>
               <div class="sec3__values-row">
                 <div class="sec3__values-name">Налог (УСН 6%)</div>
-                <div class="sec3__values-number">680 000</div>
+                <div class="sec3__values-number" id="tax">680 000</div>
               </div>
               <div class="sec3__note">
                 <div class="sec3__note-text">Вы заработаете</div>
               </div>
-              <div class="sec3__summ">340 000</div>
-              <div class="sec3__summ-note">за 1 месяц</div>
+              <div class="sec3__summ" id="profit">340 000</div>
+              <div class="sec3__summ-note">
+                за
+                <span id="monthNumber">1</span>
+                <span id="monthStr">месяц</span>
+              </div>
             </div>
           </div>
         </div>
@@ -188,7 +221,7 @@
       <div class="sec3__bottom">
         <div class="container">
           <div class="sec3__bottom-row">
-            <p class="l italic color-white sec3__bottom-title mb0">Узнайте, как заработать <span>340 000</span> за 1 месяц в PDF-презентации франшизы</p>
+            <p class="l italic color-white sec3__bottom-title mb0">Узнайте, как заработать <span>340 000</span><br> за 1 месяц в PDF-презентации франшизы</p>
             <button class="btn-round btn-round_download js-small-btn sec3__btn">Скачать презентацию <span>франшизы</span></button>
           </div>
         </div>
@@ -198,8 +231,8 @@
       <div class="container">
         <div class="sec4__heading ta-center">
           <h2 class="bold">Простая бизнес-модель</h2>
-          <p class="l italic">80% работы мы сделаем за вас</p>
-          <p class="m light mb2">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+          <p class="l italic">80% работы мы сделаем за Вас</p>
+          <p class="m light mb2">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу, и клиентами, которые хотят купить франшизу</p>
         </div>
         <div class="sec4__row">
           <div class="sec4__col">
@@ -208,12 +241,32 @@
                 <div class="sec4__list-head">
                   <div class="sec4__list-title-wrap">
                     <p class="sec4__list-title">Техническое оснащение офиса</p>
-                    <p class="xs sec4__list-subtitle">Вся техническая часть вашего запуска лежит на наших плечах.</p>
+                    <p class="xs sec4__list-subtitle">Вся техническая часть вашего запуска лежит на наших плечах:</p>
                   </div>
                 </div>
                 <div class="sec4__list-body">
                   <div class="sec4__list-body-text">
-                    <p class="xs">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+                    <p class="xs"></p>
+                    <ul class="sec4__list-table">
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Внедрение самого высокотехнологичного инструмента для автоматизации бизнеса — CRM-системы.</p>
+                      </li>
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Подключение к корпоративной мобильной связи. Забудьте, что значит роуминг по самому выгодному и эксклюзивному тарифу.</p>
+                      </li>
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Предоставление уникального приложения для записи звонков. Будьте на 100% уверены, что все детали разговора будут у вас под рукой.</p>
+                      </li>
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Создание рекламных кампаний в Яндекс.Директ и Google Adwords.</p>
+                      </li>
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Создание landing page. Ваша визитная карточка в сети интернет.</p>
+                      </li>
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Размещение информации и контактных данных о Вашем офисе на нашем сайте и социальных сетях.</p>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -226,7 +279,7 @@
                 </div>
                 <div class="sec4__list-body">
                   <div class="sec4__list-body-text">
-                    <p class="xs">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+                    <p class="xs">Из этих 20 человек останутся только те, кто по-настоящему подходит к работе в Вашей компании. Их обучение и последующая аттестация — наша работа.</p>
                   </div>
                 </div>
               </div>
@@ -234,12 +287,35 @@
                 <div class="sec4__list-head">
                   <div class="sec4__list-title-wrap">
                     <p class="sec4__list-title">Реклама и маркетинг</p>
-                    <p class="xs sec4__list-subtitle">Наш отдел маркетинга будет работать над привлечением клиентов в Ваш бизнес.</p>
+                    <p class="xs sec4__list-subtitle">Наш отдел маркетинга будет работать над продвижением Вашего бизнеса.</p>
                   </div>
                 </div>
                 <div class="sec4__list-body">
                   <div class="sec4__list-body-text">
-                    <p class="xs">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+                    <p class="xs">В Вашем распоряжении будет 7 инструментов привлечения клиентов:</p>
+                    <ul class="sec4__list-table">
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">100 заявок от ведущих предпринимателей из Вашего города, которые хотят упаковать свой бизнес во франшизу. Найти и подготовить таких людей для Вас — наша задача.</p>
+                      </li>
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Контекстная реклама — как способ № 1 по привлечению клиентов из интернета.</p>
+                      </li>
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Email-рассылки. Кому, как и когда отправлять — «Франчайзинг5» подготовит письма специально для Вас.</p>
+                      </li>
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Холодные звонки. Уникальный скрипт позволяет заинтересовать 20% людей, с которыми до этого у Вас не было контакта.</p>
+                      </li>
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Бизнес-конференции и форумы. Опыт проведения которых мы передадим Вам.</p>
+                      </li>
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Социальные сети. Используйте все мощности сарафанного радио 21 века.</p>
+                      </li>
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Печатные и электронные маркетинговые материалы. Чтобы все самое важное всегда было у Ваших клиентов под рукой.</p>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -252,7 +328,7 @@
                 </div>
                 <div class="sec4__list-body">
                   <div class="sec4__list-body-text">
-                    <p class="xs">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+                    <p class="xs"></p>
                   </div>
                 </div>
               </div>
@@ -265,7 +341,7 @@
                 </div>
                 <div class="sec4__list-body">
                   <div class="sec4__list-body-text">
-                    <p class="xs">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+                    <p class="xs"></p>
                   </div>
                 </div>
               </div>
@@ -273,19 +349,28 @@
                 <div class="sec4__list-head">
                   <div class="sec4__list-title-wrap">
                     <p class="sec4__list-title">Бухгалтерская и юридическая поддержка</p>
-                    <p class="xs sec4__list-subtitle">Мы знаем все тонкости в нашем бизнесе и не дадим совершить Вам даже 1 ошибку.</p>
+                    <p class="xs sec4__list-subtitle">Мы знаем все тонкости нашего бизнеса и не дадим совершить Вам даже 1 ошибку.</p>
                   </div>
                 </div>
                 <div class="sec4__list-body">
                   <div class="sec4__list-body-text">
-                    <p class="xs">Вам нужно только вести переговоры с бизнесменами, которые хотят упаковать свой бизнес во франшизу и клиентами, которые хотят купить франшизу</p>
+                    <p class="xs">Поддержка включает в себя:</p>
+                    <ul class="sec4__list-table">
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Помощь в заключении любых договоров.</p>
+                      </li>
+                      <li class="sec4__list-table-item">
+                        <p class="xs sec4__list-table-item-text">Консультации по ведению бухгалтерии и отчетности.</p>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="sec4__col sec4__col_door">
-            <div class="sec4__door"><img class="sec4__doorleft" src="img/sec4-door.png" alt=""><img class="sec4__doorright" src="img/sec4-doorright.png" alt=""><img class="sec4__doorimg" src="img/sec4-img1.png" alt=""><img class="sec4__doorimg" src="img/sec4-img2.png" alt=""><img class="sec4__doorimg" src="img/sec4-img3.png" alt=""><img class="sec4__doorimg" src="img/sec4-img4.png" alt=""><img class="sec4__doorimg" src="img/sec4-img5.png" alt=""><img class="sec4__doorimg" src="img/sec4-img6.png" alt="">
+            <div class="sec4__door"><img class="sec4__doorleft" src="img/sec4-door.png" alt="">
+              <div class="sec4__doorright-wrap"><img class="sec4__door-logo" src="img/color-logo.png" alt=""><img class="sec4__doorright" src="img/sec4-doorright.png" alt=""></div><img class="sec4__doorimg" src="img/sec4-img1.png" alt=""><img class="sec4__doorimg" src="img/sec4-img2.png" alt=""><img class="sec4__doorimg" src="img/sec4-img3.png" alt=""><img class="sec4__doorimg" src="img/sec4-img4.png" alt=""><img class="sec4__doorimg" src="img/sec4-img5.png" alt=""><img class="sec4__doorimg" src="img/sec4-img6.png" alt="">
             </div>
           </div>
         </div>
@@ -293,31 +378,36 @@
     </section>
     <section class="sec sec5">
       <div class="container sec5__container">
-        <h3 class="ta-center bold">Мы открыли 83 офиса по всей России и СНГ</h3>
+        <h3 class="ta-center bold sec5__heading">Мы открыли более 100 офисов<br> по всей России и СНГ</h3>
         <p class="l italic ta-center mb2">В некоторых городах мы открываем только одно представительство</p>
         <div class="sheets sec5__sheets">
           <p class="l medium ta-center mb1">Проверьте возможность открытия офиса в своем городе</p>
-          <form class="sec5__form" data-next="#bigForm" id="sec5Form">
+          <form class="sec5__form" data-next="#bigForm" data-goal="ORDER" id="sec5Form">
             <div class="sec5__form-row">
               <label class="sec5__form-label" for="sec5InputCity">Ваш город</label>
               <input class="sec5__form-input input input_small" id="sec5InputCity" name="city" placeholder="Москва" required>
             </div>
             <div class="sec5__form-row">
-              <label class="sec5__form-label" for="sec5InputCity">Ваш телефон</label>
-              <input class="sec5__form-input input input_small" id="sec5InputCity" name="phone" type="tel" required>
+              <label class="sec5__form-label" for="sec5InputPhone">Ваш телефон</label>
+              <input class="sec5__form-input input input_small" id="sec5InputPhone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
             </div>
             <div class="sec5__form-row">
-              <label class="sec5__form-label" for="sec5InputCity">E-mail</label>
-              <input class="sec5__form-input input input_small" id="sec5InputCity" name="email" type="email" placeholder="example@yandex.ru" required>
+              <label class="sec5__form-label" for="sec5InputEmail">E-mail</label>
+              <input class="sec5__form-input input input_small" id="sec5InputEmail" name="email" type="email" placeholder="example@yandex.ru" required>
             </div>
-            <button class="btn-round sec5__form-btn">проверить город</button>
+            <button class="btn-round sec5__form-btn">Проверить город</button>
+            <div>
+              <label>
+                <input type="checkbox" checked required><span class="form__security-text form__security-text_big">Нажимая кнопку «Получить предложение», я даю согласие на обработку персональных данных и соглашаюсь с <a class="form__security-link" href="doc/politic.pdf" target="_blank">политикой конфиденциальности</a></span>
+              </label>
+            </div>
           </form>
         </div>
       </div>
     </section>
     <section class="sec sec6">
       <div class="container">
-        <h3 class="ta-center bold">Откройте свой филиал «Франчайзинг5» за 21 день</h3>
+        <h3 class="ta-center bold">Откройте свой филиал «Франчайзинг5»<br> за 21 день</h3>
         <div class="sec6__block">
           <div class="sec6__block-row">
             <div class="sec6__block-col sec6__block-col_left">
@@ -408,7 +498,7 @@
           </div>
           <div class="sec6__block-row">
             <div class="sec6__block-col sec6__block-col_left">
-              <p class="sec6__block-name mb0">Запуск интернет продвижения</p>
+              <p class="sec6__block-name mb0">Запуск интернет-продвижения</p>
             </div>
             <div class="sec6__block-col sec6__block-col_right">
               <div class="sec6__block-lines">
@@ -419,7 +509,7 @@
           </div>
           <div class="sec6__block-row">
             <div class="sec6__block-col sec6__block-col_left">
-              <p class="sec6__block-name mb0">Подпись части актов, договоренности</p>
+              <p class="sec6__block-name mb0">Подписание части актов, договоренности</p>
             </div>
             <div class="sec6__block-col sec6__block-col_right">
               <div class="sec6__block-lines">
@@ -439,13 +529,17 @@
               </div>
             </div>
           </div>
+          <div class="sec6__description">
+            <div class="sec6__description-item sec6__description-item_dark">— количество дней до задачи</div>
+            <div class="sec6__description-item sec6__description-item_light">— количество дней на задачу</div>
+          </div>
         </div>
       </div>
     </section>
     <section class="sec sec7">
       <div class="container ta-center">
         <h3 class="color-white ta-center bold mb1">Узнайте точную стоимость франшизы для своего города</h3>
-        <form class="sec7__form">
+        <form class="sec7__form" id="sec7Form" data-goal="ORDER">
           <label class="sec7__form-label">
             <input class="input" name="city" placeholder="Ваш город" required>
           </label>
@@ -458,32 +552,368 @@
           <label class="sec7__form-label">
             <button class="btn-round sec7__form-btn">Узнать стоимость</button>
           </label>
+          <div class="color-white sec7__form-security">
+            <label>
+              <input type="checkbox" checked required><span class="form__security-text form__security-text_big">Нажимая кнопку «Получить предложение», я даю согласие на обработку персональных данных и соглашаюсь с <a class="form__security-link" href="doc/politic.pdf" target="_blank">политикой конфиденциальности</a></span>
+            </label>
+          </div>
         </form>
+      </div>
+    </section>
+    <section class="sec sec8">
+      <div class="container">
+        <h3 class="ta-center bold mb1">Партнеры, которые уже ведут активную работу</h3>
+        <div class="partners">
+          <div class="partners__item">
+            <div class="partners__col partners__col_user">
+              <div class="partners__user"><img class="partners__user-img" src="img/sec8-user1.png" alt="">
+                <div class="partners__user-info">
+                  <p class="partners__name">Алексей Мертехин</p>
+                  <p class="partners__info partners__info_adress">Пермь, ул. Газеты Звезда, д. 13</p>
+                  <p class="partners__info partners__info_opened">
+                    Открытие филиала:
+август 2015
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="partners__col partners__col_text">
+              <div class="partners__topline"></div>
+              <p class="parthers__title l medium mb1">За время нашего сотрудничества мы стали настоящими экспертами в области франчайзинга</p>
+              <div class="parthers__text xs">
+                <p class="partners__text-paragraph">Благодарим головной офис компании «Франчайзинг5» от всего коллектива «Франчайзинг5 Пермь» за максимальную поддержку и регулярное сопровождение. В любой момент можно позвонить и проконсультироваться по возникшим вопросам. За работу профессионалов, команду сплоченных и целеустремленных людей.</p>
+                <p class="partners__text-paragraph">За время нашего сотрудничества, мы стали настоящими экспертами в области франчайзинга, научились наблюдать специфику рынка и видеть любой бизнес изнутри. Приятно быть частью огромной семьи. Спасибо Ф5 за возможность развиваться каждый день!</p>
+              </div>
+            </div>
+            <div class="partners__row">
+              <div class="partners__row-item">
+                <p class="partners__row-name xs">Средняя прибыль в месяц</p>
+                <div class="partners__row-value partners__row-value_profit">320 000</div>
+              </div>
+              <div class="partners__row-item">
+                <p class="partners__row-name xs">Упаковано с момента открытия</p>
+                <div class="partners__row-value">25
+                  франшиз
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="partners__item">
+            <div class="partners__col partners__col_user">
+              <div class="partners__user"><img class="partners__user-img" src="img/sec8-user2.png" alt="">
+                <div class="partners__user-info">
+                  <p class="partners__name">Наталья Кальмина</p>
+                  <p class="partners__info partners__info_adress">Новосибирск, ул. Ядринцевская, д. 53/1, оф 60</p>
+                  <p class="partners__info partners__info_opened">
+                    Открытие филиала:
+июль 2015
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="partners__col partners__col_text">
+              <div class="partners__topline"></div>
+              <p class="parthers__title l medium mb1">Мы вместе делаем очень нужное дело</p>
+              <div class="parthers__text xs">
+                <p class="partners__text-paragraph">Очень рада сотрудничеству с компанией «Франчайзинг5», мы вместе делаем очень нужное дело в нужное время, помогая себе и другим развиваться и становиться известными не только у себя в регионе, но и по России и СНГ.</p>
+              </div>
+            </div>
+            <div class="partners__row">
+              <div class="partners__row-item">
+                <p class="partners__row-name xs">Средняя прибыль в месяц</p>
+                <div class="partners__row-value partners__row-value_profit">330 000</div>
+              </div>
+              <div class="partners__row-item">
+                <p class="partners__row-name xs">Упаковано с момента открытия</p>
+                <div class="partners__row-value">15
+                  франшиз
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="partners__item">
+            <div class="partners__col partners__col_user">
+              <div class="partners__user"><img class="partners__user-img" src="img/sec8-user3.png" alt="">
+                <div class="partners__user-info">
+                  <p class="partners__name">Наталья Татаркина</p>
+                  <p class="partners__info partners__info_adress">Ижевск, ул. Ворошилова, д. 109а</p>
+                  <p class="partners__info partners__info_opened">
+                    Открытие филиала:
+декабрь 2015
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="partners__col partners__col_text">
+              <div class="partners__topline"></div>
+              <p class="parthers__title l medium mb1">До знакомства с «Франчайзинг5» я ничего не знала о франчайзинге</p>
+              <div class="parthers__text xs">
+                <p class="partners__text-paragraph">Наше сотрудничество с компанией «Франчайзинг5» началось в декабре 2015 года. До этого момента у меня не было опыта работы по франшизе и представления о том, что представляет собой рынок франчайзинга в России в целом. В течение года я целенаправленно выбирала франшизу, которая не только приносит прибыль, но и дарит удовольствие от работы. Мой выбор остановился на «Франчайзинг5».</p>
+                <p class="partners__text-paragraph">За время нашего плодотворного сотрудничества, я стала специалистом в сфере франчайзинга, научившись эффективно проводить встречи на самом высоком уровне и заключать договоры с шестизначными числами. Спустя полгода от начала работы, я могу назвать себя профессионалом своего дела. Спасибо «Франчайзинг5» за успешное партнерство!</p>
+              </div>
+            </div>
+            <div class="partners__row">
+              <div class="partners__row-item">
+                <p class="partners__row-name xs">Средняя прибыль в месяц</p>
+                <div class="partners__row-value partners__row-value_profit">230 000</div>
+              </div>
+              <div class="partners__row-item">
+                <p class="partners__row-name xs">Упаковано с момента открытия</p>
+                <div class="partners__row-value">15
+                  франшиз
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="partners__hide" id="partnersHide">
+            <div class="partners__item">
+              <div class="partners__col partners__col_user">
+                <div class="partners__user"><img class="partners__user-img" src="img/sec8-user4.png" alt="">
+                  <div class="partners__user-info">
+                    <p class="partners__name">Евгений Золотарев</p>
+                    <p class="partners__info partners__info_adress">ул. Бакунина, д. 45, оф 215</p>
+                    <p class="partners__info partners__info_opened">
+                      Открытие филиала:
+июнь 2015
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="partners__col partners__col_text">
+                <div class="partners__topline"></div>
+                <p class="parthers__title l medium mb1">Когда я познакомился с компанией «Франчайзинг5» и лично с Артемом Захаровым, стало понятно: это мое</p>
+                <div class="parthers__text xs">
+                  <p class="partners__text-paragraph">Франчайзингом интересуюсь довольно давно. Более 15 лет сам являлся франчайзи одной из самых известных российских франшиз. Когда я познакомился с компанией «Франчайзинг5» и лично с Артемом Захаровым, стало понятно: это — моё. Это — то, чем интересно заниматься, чем хочется. Есть, где применить знания и опыт. И получать достойное вознаграждение за свою работу.</p>
+                  <p class="partners__text-paragraph">Радует, что и наши клиенты буквально с полуслова понимают свою выгоду и перспективы во франчайзинге. Ведь собственная франшиза нужна каждому успешному бизнесу. Уверен, что число компаний, созревших для франшизы, будет только расти. А это значит, что будущее компании «Франчайзинг5», а вместе с ней и моё, — весьма оптимистичное. В текущей деятельности я удовлетворен сотрудничеством с компанией «Франчайзинг5», собравшей активных, компетентных и амбициозных сотрудников. Ценю саму возможность быть частью этой выдающейся команды и представлять ее в своем регионе.</p>
+                </div>
+              </div>
+              <div class="partners__row">
+                <div class="partners__row-item">
+                  <p class="partners__row-name xs">Средняя прибыль в месяц</p>
+                  <div class="partners__row-value partners__row-value_profit">500 000</div>
+                </div>
+                <div class="partners__row-item">
+                  <p class="partners__row-name xs">Упаковано с момента открытия</p>
+                  <div class="partners__row-value">28
+                    франшиз
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="partners__item">
+              <div class="partners__col partners__col_user">
+                <div class="partners__user"><img class="partners__user-img" src="img/sec8-user5.png" alt="">
+                  <div class="partners__user-info">
+                    <p class="partners__name">Антон Сенев</p>
+                    <p class="partners__info partners__info_adress">Санкт-Петербург</p>
+                    <p class="partners__info partners__info_opened">
+                      Открытие филиала:
+декабрь 2015
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="partners__col partners__col_text">
+                <div class="partners__topline"></div>
+                <p class="parthers__title l medium mb1">Самое важное — возможные перспективы франчайзинга в России</p>
+                <div class="parthers__text xs">
+                  <p class="partners__text-paragraph">Франчайзинг — это интереснейшее явление на просторах бизнеса в России. Я давно начал интересоваться этой темой, изучал рынок, ездил на бизнес-форумы и семинары. Сперва я раздумывал купить франшизу в сфере общепита, или бизнес, завязанный на услугах населению. Но, копав все больше, я вышел на «Франчайзинг5». Приехав к ним в офис, я представить не мог, каких масштабов уже достиг франчайзинг в России и какие перспективы возможны для развития. Я понял, что это мое. Сейчас я активно работаю с предпринимателями своего региона, развивая бизнес и помогая, в том числе, простым людям, получить доступный бизнес.</p>
+                </div>
+              </div>
+              <div class="partners__row">
+                <div class="partners__row-item">
+                  <p class="partners__row-name xs">Средняя прибыль в месяц</p>
+                  <div class="partners__row-value partners__row-value_profit">244 400</div>
+                </div>
+                <div class="partners__row-item">
+                  <p class="partners__row-name xs">Упаковано с момента открытия</p>
+                  <div class="partners__row-value">15
+                    франшиз
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="partners__item">
+              <div class="partners__col partners__col_user">
+                <div class="partners__user"><img class="partners__user-img" src="img/sec8-user6.png" alt="">
+                  <div class="partners__user-info">
+                    <p class="partners__name">Денис Васильев</p>
+                    <p class="partners__info partners__info_adress">Санкт-Петербург, Набережная Обводного канала, д. 92</p>
+                    <p class="partners__info partners__info_opened">
+                      Открытие филиала:
+октябрь 2016
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="partners__col partners__col_text">
+                <div class="partners__topline"></div>
+                <p class="parthers__title l medium mb1">Я пересмотрел свои взгляды на франчайзинг в России</p>
+                <div class="parthers__text xs">
+                  <p class="partners__text-paragraph">Мое отношение к франчайзингу всегда складывалось скептически. Я думал, что это какая-то бутафория, созданная для того, чтобы вытягивать деньги из простых людей. Но мой друг, который приобрел франшизу одной из юридических компаний, перевернул мои взгляды. Являясь по природе очень любопытным человеком, я начал изучать рынок франчайзинга. На одном из бизнес-форумов я встретил представителей компании «Франчайзинг5». Так, начался новый виток в моей жизни — я превратился с предпринимателя, который помогает другим предпринимателям. И я не только зарабатываю, но и несу действительно благую цель.</p>
+                </div>
+              </div>
+              <div class="partners__row">
+                <div class="partners__row-item">
+                  <p class="partners__row-name xs">Средняя прибыль в месяц</p>
+                  <div class="partners__row-value partners__row-value_profit">101 600</div>
+                </div>
+                <div class="partners__row-item">
+                  <p class="partners__row-name xs">Упаковано с момента открытия</p>
+                  <div class="partners__row-value">3
+                    франшиз
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="partners__item">
+              <div class="partners__col partners__col_user">
+                <div class="partners__user"><img class="partners__user-img" src="img/sec8-user7.png" alt="">
+                  <div class="partners__user-info">
+                    <p class="partners__name">Денис Жданов</p>
+                    <p class="partners__info partners__info_adress">Тюмень, ул. Харьковская, д. 77, каб. 311</p>
+                    <p class="partners__info partners__info_opened">
+                      Открытие филиала:
+июль 2016
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="partners__col partners__col_text">
+                <div class="partners__topline"></div>
+                <p class="parthers__title l medium mb1">Работа в команде — лучший выбор каждого предпринимателя</p>
+                <div class="parthers__text xs">
+                  <p class="partners__text-paragraph">Выражаю благодарность компании «Франчайзинг5» за то, что помогли пересмотреть мои взгляды на бизнес. Я всегда был предпринимателем, который работает один, партнерство или друзья — не позволительная вещь. Ведь в моем понимании, в бизнесе нет дружбы. Для себя начал рассматривать новое направление, чтобы диверсифицировать основной бизнес. Думал и про производство, уже хотел закупать оборудование. Чисто случайно вышел на «Франчайзинг5». Переговорив с менеджером у меня внутри зажегся огонек любопытства. А когда у меня возникает это чувство, я знаю, что почуял правильный путь. Буквально через неделю я приехал в Казань, чтобы познакомится поближе. Мне рассказали все принципы работы и предоставили большой объем информации. Сейчас, спустя полгода работы, я понял, на сколько, которые при случае помогут и подскажут — лучший выбор разумного человека.</p>
+                </div>
+              </div>
+              <div class="partners__row">
+                <div class="partners__row-item">
+                  <p class="partners__row-name xs">Средняя прибыль в месяц</p>
+                  <div class="partners__row-value partners__row-value_profit">149 200</div>
+                </div>
+                <div class="partners__row-item">
+                  <p class="partners__row-name xs">Упаковано с момента открытия</p>
+                  <div class="partners__row-value">7
+                    франшиз
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="partners__item">
+              <div class="partners__col partners__col_user">
+                <div class="partners__user"><img class="partners__user-img" src="img/sec8-user8.png" alt="">
+                  <div class="partners__user-info">
+                    <p class="partners__name">Николай Алеев</p>
+                    <p class="partners__info partners__info_adress">Санкт-Петербург, ул. Кантемировская д. 37 А, оф. 419</p>
+                    <p class="partners__info partners__info_opened">
+                      Открытие филиала:
+июль 2016
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="partners__col partners__col_text">
+                <div class="partners__topline"></div>
+                <p class="parthers__title l medium mb1">Не только новый знания о франчайзинге, но и прибыльный бизнес</p>
+                <div class="parthers__text xs">
+                  <p class="partners__text-paragraph">Я начинал наше сотрудничество с «Франчайзинг5» в качестве клиента, с целью развить собственную франчайзинговую сеть. Упаковал свой бизнес и остался очень доволен качеством работы. Во время упаковки, стал еще больше вникать в сам процесс создания франшиз. Это стало очень мне интересно. Чтобы в дальнейшем качественно развивать свою франчайзинговую сеть, я решил влиться в команду «Франчайзинг5» в качестве партнера. В итоге я получил не только отличные знания, но и хороший дополнительный заработок к своему основному направлению.</p>
+                </div>
+              </div>
+              <div class="partners__row">
+                <div class="partners__row-item">
+                  <p class="partners__row-name xs">Средняя прибыль в месяц</p>
+                  <div class="partners__row-value partners__row-value_profit">122 000</div>
+                </div>
+                <div class="partners__row-item">
+                  <p class="partners__row-name xs">Упаковано с момента открытия</p>
+                  <div class="partners__row-value">6
+                    франшиз
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ta-center">
+            <button class="btn-round btn-round_border" id="showPartners">Читать все отзывы</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec sec9"><img class="sec9__img" src="img/sec9-brilliant.png" alt="">
+      <div class="container sec9__container">
+        <div class="sheets sec5__sheets sec9__sheets">
+          <p class="l medium ta-center mb1">Приглашаем Вас в центральный офис Франчайзинг5 в Казани</p>
+          <p class="m ta-center mb1">Вы увидите, как работает наш бизнес. Заполните форму и запишитесь на экскурсию</p>
+          <form class="sec5__form" data-next="#bigForm" data-goal="ORDER" id="bottomForm">
+            <div class="sec5__form-row">
+              <label class="sec5__form-label" for="sec9InputName">Ваше имя</label>
+              <input class="sec5__form-input input input_small" id="sec9InputName" name="name" placeholder="Александр" required>
+            </div>
+            <div class="sec5__form-row">
+              <label class="sec5__form-label" for="sec9InputPhone">Ваш телефон</label>
+              <input class="sec5__form-input input input_small" id="sec9InputPhone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="sec5__form-row">
+              <label class="sec5__form-label" for="sec9InputEmail">E-mail</label>
+              <input class="sec5__form-input input input_small" id="sec9InputEmail" name="email" type="email" placeholder="example@yandex.ru" required>
+            </div>
+            <button class="btn-round sec5__form-btn">Записаться на экскурсию</button>
+            <label>
+              <input type="checkbox" checked required><span class="form__security-text form__security-text_big">Нажимая кнопку «Получить предложение», я даю согласие на обработку персональных данных и соглашаюсь с <a class="form__security-link" href="doc/politic.pdf" target="_blank">политикой конфиденциальности</a></span>
+            </label>
+          </form>
+        </div>
       </div>
     </section>
     <footer class="footer">
       <div class="container footer__container">
-        <div class="footer__block footer__block_social">
-          <p class="footer__text footer__text_copy">© 2017, «Уномоменто»</p>
-          <div class="footer__social">
-            <p class="footer__text footer__text_social-title">Мы в соц. сетях</p>
-            <ul class="footer__social-list">
-              <li class="footer__social-item"><a class="footer__link footer__link_social" href="" target="_blank"><i class="fa fa-vk"></i></a></li>
-              <li class="footer__social-item"><a class="footer__link footer__link_social" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
-              <li class="footer__social-item"><a class="footer__link footer__link_social" href="" target="_blank"><i class="fa fa-tripadvisor"></i></a></li>
-            </ul>
+        <div class="footer__block footer__block_info">
+          <div class="footer__info"><a href="/"><img class="footer__info-img" src="img/footer-logo.svg" alt=""></a></div>
+        </div>
+        <div class="footer__block footer__block_company">
+          <div class="footer__info-list">
+            <p class="footer__info-list-item">ООО «ФРАНЧАЙЗИНГ5»</p>
+            <p class="footer__info-list-item">ИНН/КПП 1655296086/165901001</p>
+            <p class="footer__info-list-item">ОГРН 1141690046552</p>
           </div>
         </div>
         <div class="footer__block footer__block_contacts">
-          <p class="footer__text footer__text_adress">Наш офис: Пермь, ул. Шоссе Космонавтов, 111, корпус 2</p>
-          <div class="footer__contacts"><a class="footer__text footer__link footer__link_politic" href="doc/politic.pdf" target="_blank">Политика конфиденциальности</a>
-            <p class="footer__text">e-mail:<a class="footer__link" href="mailto:uno@uno-perm.ru">uno@uno-perm.ru</a></p>
-          </div>
+          <p class="footer__text footer__text_adress">Наш офис: г. Казань, ул. Сайдашева,<br> д 12, 6 этаж, Бизнес центр «Рябина»</p><a class="footer__link footer__link_map" href="https://www.google.ru/maps/place/%D0%A0%D1%8F%D0%B1%D0%B8%D0%BD%D0%B0/@55.773235,49.1146081,17z/data=!4m13!1m7!3m6!1s0x415eacffc49ce9e9:0xb1d4b3627580bdf0!2z0YPQuy4g0KHQsNC70LjRhdCwINCh0LDQudC00LDRiNC10LLQsCwgMTIsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L8uINCi0LDRgtCw0YDRgdGC0LDQvSwgNDIwMDIx!3b1!8m2!3d55.7722936!4d49.1169041!3m4!1s0x0:0x103669378a6ff6d8!8m2!3d55.7729162!4d49.1141177" target="_blank">Схема проезда</a>
         </div>
-        <div class="footer__block footer__block_feedback"><a class="footer__phone" href="tel:88003331963" data-phone="88003331963">8 (800) 333-19-63</a><a class="footer__link footer__link_getcall js-small-btn">Заказать звонок</a></div>
+        <div class="footer__block footer__block_feedback"><a class="footer__phone" href="tel:88003331963" data-phone="88003331963">8 (800) 333-19-63</a>
+          <p class="footer__phone-note footer__text mb0">Бесплатно по России</p><a class="footer__text footer__link footer__link_politic" href="doc/politic.pdf" target="_blank">Политика конфиденциальности</a>
+        </div>
       </div>
     </footer>
     <script src="scripts/vendor.js"></script>
     <script src="scripts/app.js"></script>
+    <!--Yandex.Metrika counter-->
+    <script type="text/javascript">
+      (function (d, w, c) {
+          (w[c] = w[c] || []).push(function() {
+              try {
+                  w.yaCounter28535971 = new Ya.Metrika({
+                      id:28535971,
+                      clickmap:true,
+                      trackLinks:true,
+                      accurateTrackBounce:true,
+                      webvisor:true
+                  });
+              } catch(e) { }
+          });
+      
+          var n = d.getElementsByTagName("script")[0],
+              s = d.createElement("script"),
+              f = function () { n.parentNode.insertBefore(s, n); };
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://mc.yandex.ru/metrika/watch.js";
+      
+          if (w.opera == "[object Opera]") {
+              d.addEventListener("DOMContentLoaded", f, false);
+          } else { f(); }
+      })(document, window, "yandex_metrika_callbacks");
+    </script><noscript><div><img src="https://mc.yandex.ru/watch/28535971" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter-->
   </body>
 </html>

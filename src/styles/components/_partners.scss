@@ -1,0 +1,183 @@
+$partners-col-user-width: 400px;
+
+.partners {
+    
+
+    &__item {
+        display: flex;
+        flex-flow: wrap;
+        margin-bottom: 70px;
+        padding-top: 10px;
+
+        @include media(w1024) {
+            flex-flow: column;
+        }
+
+        @include media(w768) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__col {
+
+        &_user {
+            width: $partners-col-user-width;
+        }
+
+        &_text {
+            width: calc(100% - #{$partners-col-user-width});
+        }
+
+        @include media(w1024) {
+            width: 100%;
+        }
+    }
+
+    &__user {
+        text-align: center;
+        margin-bottom: 10px;
+
+        @include media(w1024) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            padding-bottom: 30px;
+        }
+    }
+
+    &__user-img {
+        margin-right: 10px;
+
+        @include media(w1024) {
+            max-width: 106px;
+        }
+    }
+
+    &__user-info {
+
+    }
+    
+    &__name {
+        font-size: 21px;
+        font-style: italic;
+    }
+
+    &__info {
+        font-size: 14px;
+
+        &_opened {
+            margin-bottom: 0;
+        }
+    }
+
+    &__topline {
+        background-color: #d9d9d9;
+        margin-bottom: 30px;
+        position: relative;
+        height: 3px;
+
+        &:before {
+            content: "“";
+            transform: translate(-50%, 0);
+            background-color: white;
+            color: #bfbfbf;
+            line-height: 0.4;
+            font-size: 58px;
+            padding: 4px 10px;
+            position: absolute;
+            left: 50%;
+        }
+    }
+
+    &__title {
+        font-size: 28px;
+    }
+
+    &__text-paragraph {
+        margin-bottom: 1.5em;
+    }
+
+    &__row {
+        background-color: #f1f1f1;
+        overflow: hidden;
+        padding: 30px 0 30px $partners-col-user-width;
+        width: 100%;
+
+        @include media(w1024) {
+            margin-left: -$container-side-padding-tablet;
+            margin-right: -$container-side-padding-tablet;
+            padding: 30px 0 30px 30px;
+            width: auto;
+        }
+
+        @include media(w768) {
+            padding: 30px 10px;
+        }
+    }
+
+    &__row-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 20px;
+
+        @include media(w768) {
+            flex-flow: column;
+            align-items: center;
+        }
+    }
+
+    &__row-name {
+        margin-bottom: 0;
+        position: relative;
+
+        &:after {
+            content: "";
+            border-bottom: 1px dotted black;
+            position: absolute;
+            bottom: 4px;
+            left: calc(100% + 5px);
+            height: 1px;
+            width: 100vw;
+
+            @include media(w768) {
+                content: none;
+            }
+        }
+    }
+
+    &__row-value {
+        background-color: #f1f1f1;
+        color: #4e3187;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1;
+        padding: 0 50px 0 5px;
+        position: relative;
+        z-index: 2;
+
+        &_profit {
+
+            &:after {
+                content: "*";
+                font-family: "PTRouble";
+                margin-left: 5px;
+            }
+        }
+
+        @include media(w768) {
+            padding: 0 10px;
+        }
+    }
+
+    &__hide {
+        transition: 0.5s ease;
+        overflow: hidden;
+        height: 0;
+
+        &_open {
+            overflow: visible;
+        }
+    }
+}

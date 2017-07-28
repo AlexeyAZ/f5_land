@@ -13,28 +13,23 @@
     &__container {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         width: 100%;
 
         @include media(w768) {
-            flex-flow: column;
+            display: block;
+            text-align: center;
         }
     }
 
     &__logo {
-        display: flex;
-        color: white;
-        font-size: 14px;
-        text-decoration: none;
-
-        @include media(w768) {
-            font-size: 12px;
-        }
+        
     }
 
     &__logo-img {
         margin-right: 10px;
-        max-width: 150px;
+        max-width: 326px;
+        width: 100%;
     }
 
     &__item {
